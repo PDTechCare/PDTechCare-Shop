@@ -1,0 +1,1931 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#20a9e8">
+<title>PD TechCare | Sửa chữa & Phụ kiện điện thoại</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0
+}
+
+html{
+  scroll-behavior:smooth
+}
+
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  background:#f5fbff;
+  color:#17202a;
+}
+
+button,input,select,textarea{
+  font:inherit
+}
+
+button{
+  cursor:pointer
+}
+
+a{
+  text-decoration:none;
+  color:inherit
+}
+
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#fff;
+  box-shadow:0 2px 15px #168dcc20;
+}
+
+.header{
+  max-width:1200px;
+  margin:auto;
+  min-height:70px;
+  padding:10px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.logo{
+  font-size:25px;
+  font-weight:900;
+  color:#159bd7;
+}
+
+.logo span{
+  color:#10202b
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
+
+.nav button{
+  border:0;
+  background:transparent;
+  padding:10px 13px;
+  border-radius:10px;
+  font-weight:700;
+  color:#34495e;
+}
+
+.nav button:hover{
+  background:#e9f8ff;
+  color:#0796d5;
+}
+
+.cart-btn{
+  background:#159bd7!important;
+  color:#fff!important;
+}
+
+.menu{
+  display:none;
+  border:0;
+  background:#eaf8ff;
+  color:#159bd7;
+  font-size:23px;
+  padding:8px 11px;
+  border-radius:10px;
+}
+
+/* HERO */
+
+.hero{
+  background:
+    radial-gradient(circle at 85% 20%,#80ddff55,transparent 30%),
+    linear-gradient(135deg,#eafbff,#fff);
+  padding:70px 18px 65px;
+}
+
+.hero-inner{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  align-items:center;
+  gap:40px;
+}
+
+.hero h1{
+  font-size:clamp(36px,6vw,64px);
+  line-height:1.05;
+  margin-bottom:18px;
+}
+
+.hero h1 span{
+  color:#159bd7
+}
+
+.hero p{
+  color:#607080;
+  font-size:18px;
+  line-height:1.7;
+  margin-bottom:25px;
+}
+
+.hero-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.btn{
+  border:0;
+  padding:13px 18px;
+  border-radius:12px;
+  font-weight:800;
+}
+
+.btn-primary{
+  background:#159bd7;
+  color:#fff;
+  box-shadow:0 8px 20px #159bd733;
+}
+
+.btn-light{
+  background:#fff;
+  color:#159bd7;
+  border:1px solid #d8eef8;
+}
+
+.hero-card{
+  background:#fff;
+  border-radius:30px;
+  padding:30px;
+  box-shadow:0 20px 50px #168dcc18;
+  border:1px solid #e1f4fb;
+}
+
+.hero-phone{
+  width:150px;
+  height:280px;
+  margin:0 auto 20px;
+  border-radius:25px;
+  background:linear-gradient(145deg,#182631,#4c6a7b);
+  border:6px solid #101920;
+  box-shadow:0 20px 35px #0003;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-weight:900;
+  text-align:center;
+}
+
+.hero-card h3{
+  text-align:center;
+  margin-bottom:8px
+}
+
+.hero-card p{
+  text-align:center;
+  font-size:14px;
+  margin:0;
+}
+
+/* GENERAL */
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:55px 18px;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.section-title h2{
+  font-size:32px;
+  margin-bottom:8px;
+}
+
+.section-title p{
+  color:#71808e
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+/* CATEGORY */
+
+.category{
+  background:#fff;
+  padding:24px 15px;
+  border-radius:18px;
+  text-align:center;
+  border:1px solid #e1f1f7;
+  transition:.2s;
+}
+
+.category:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 30px #159bd718
+}
+
+.category-icon{
+  font-size:38px;
+  margin-bottom:10px
+}
+
+.category b{
+  display:block;
+  margin-bottom:5px
+}
+
+.category small{
+  color:#71808e
+}
+
+/* PRODUCTS */
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+.product{
+  background:#fff;
+  border:1px solid #e3f0f5;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 5px 18px #159bd70b;
+}
+
+.product-img{
+  height:190px;
+  background:linear-gradient(135deg,#eafaff,#fff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:72px;
+}
+
+.product-body{
+  padding:15px
+}
+
+.product-name{
+  font-weight:800;
+  min-height:42px
+}
+
+.product-price{
+  color:#0c9bda;
+  font-size:19px;
+  font-weight:900;
+  margin:8px 0 12px;
+}
+
+.product-actions{
+  display:flex;
+  gap:7px;
+}
+
+.product-actions button{
+  flex:1
+}
+
+/* PRICE */
+
+.price-wrap{
+  overflow:auto;
+  background:#fff;
+  border-radius:18px;
+  box-shadow:0 5px 25px #159bd710;
+}
+
+.price-table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:600px;
+}
+
+.price-table th,
+.price-table td{
+  padding:14px;
+  border-bottom:1px solid #edf2f5;
+  text-align:left;
+}
+
+.price-table th{
+  background:#159bd7;
+  color:#fff;
+}
+
+.price-table tr:hover td{
+  background:#f5fcff
+}
+
+.price{
+  color:#0796d5;
+  font-weight:900
+}
+
+/* SEARCH */
+
+.search-box{
+  max-width:600px;
+  margin:0 auto 25px;
+}
+
+.search-box input{
+  width:100%;
+  padding:15px 18px;
+  border:1px solid #dcecf3;
+  border-radius:14px;
+  outline:none;
+  background:#fff;
+}
+
+.search-box input:focus{
+  border-color:#159bd7;
+  box-shadow:0 0 0 3px #159bd715;
+}
+
+/* BOOKING */
+
+.booking{
+  background:#fff;
+  border-radius:22px;
+  padding:25px;
+  box-shadow:0 10px 35px #159bd710;
+  max-width:850px;
+  margin:auto;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.field{
+  margin-bottom:15px
+}
+
+.field.full{
+  grid-column:1/-1
+}
+
+.field label{
+  display:block;
+  font-weight:800;
+  margin-bottom:7px;
+}
+
+.field input,
+.field select,
+.field textarea{
+  width:100%;
+  border:1px solid #d9e9ef;
+  border-radius:11px;
+  padding:13px;
+  outline:none;
+  background:#fff;
+}
+
+.field textarea{
+  min-height:100px;
+  resize:vertical
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  border-color:#159bd7;
+}
+
+/* CART */
+
+.cart-panel{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#0006;
+  z-index:2000;
+}
+
+.cart-panel.show{
+  display:block
+}
+
+.cart{
+  position:absolute;
+  right:0;
+  top:0;
+  height:100%;
+  width:min(430px,100%);
+  background:#fff;
+  padding:20px;
+  overflow:auto;
+}
+
+.cart-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:20px;
+}
+
+.cart-head button{
+  border:0;
+  background:#edf7fb;
+  border-radius:10px;
+  padding:9px 12px;
+}
+
+.cart-item{
+  border-bottom:1px solid #eee;
+  padding:13px 0;
+}
+
+.cart-item-top{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.cart-total{
+  padding:20px 0;
+  font-size:21px;
+  font-weight:900;
+}
+
+.qty{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top:8px;
+}
+
+.qty button{
+  width:30px;
+  height:30px;
+  border:0;
+  border-radius:8px;
+  background:#eaf8ff;
+  color:#078fca;
+  font-weight:900;
+}
+
+/* CONTACT FLOAT */
+
+.float-contact{
+  position:fixed;
+  left:15px;
+  bottom:15px;
+  z-index:1500;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.float-contact a{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 14px;
+  border-radius:30px;
+  color:#fff;
+  font-weight:900;
+  box-shadow:0 6px 20px #0002;
+}
+
+.hotline{
+  background:#e53935
+}
+
+.zalo{
+  background:#078fe0
+}
+
+/* FOOTER */
+
+footer{
+  background:#10212b;
+  color:#fff;
+  padding:40px 18px;
+}
+
+.footer-inner{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:30px;
+}
+
+footer p{
+  color:#b8c7cf;
+  line-height:1.8;
+  margin-top:10px;
+}
+
+footer h3{
+  margin-bottom:12px
+}
+
+/* TOAST */
+
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:25px;
+  transform:translateX(-50%) translateY(100px);
+  background:#10212b;
+  color:#fff;
+  padding:13px 18px;
+  border-radius:12px;
+  z-index:3000;
+  opacity:0;
+  transition:.3s;
+}
+
+.toast.show{
+  transform:translateX(-50%) translateY(0);
+  opacity:1;
+}
+
+/* MODAL */
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#0007;
+  z-index:2500;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+}
+
+.modal.show{
+  display:flex
+}
+
+.modal-box{
+  background:#fff;
+  border-radius:20px;
+  width:min(600px,100%);
+  max-height:90vh;
+  overflow:auto;
+  padding:25px;
+}
+
+.modal-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.close{
+  border:0;
+  background:#edf7fb;
+  padding:8px 12px;
+  border-radius:10px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+  .hero-inner{
+    grid-template-columns:1fr
+  }
+
+  .grid,
+  .product-grid{
+    grid-template-columns:repeat(2,1fr)
+  }
+
+  .footer-inner{
+    grid-template-columns:1fr 1fr
+  }
+}
+
+@media(max-width:650px){
+
+  .header{
+    min-height:62px
+  }
+
+  .nav{
+    display:none;
+    position:absolute;
+    top:62px;
+    left:0;
+    right:0;
+    background:#fff;
+    padding:10px 15px;
+    box-shadow:0 10px 20px #0001;
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .nav.show{
+    display:flex
+  }
+
+  .nav button{
+    text-align:left
+  }
+
+  .menu{
+    display:block
+  }
+
+  .grid,
+  .product-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+  }
+
+  .hero{
+    padding:45px 15px
+  }
+
+  .container{
+    padding:42px 15px
+  }
+
+  .hero-card{
+    padding:20px
+  }
+
+  .form-grid{
+    grid-template-columns:1fr
+  }
+
+  .field.full{
+    grid-column:auto
+  }
+
+  .footer-inner{
+    grid-template-columns:1fr
+  }
+
+  .float-contact a{
+    padding:9px 12px;
+    font-size:13px
+  }
+
+  .product-img{
+    height:145px;
+    font-size:55px
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="header">
+
+<a href="#home" class="logo">
+PD <span>TechCare</span>
+</a>
+
+<button class="menu" onclick="toggleMenu()">☰</button>
+
+<nav class="nav" id="nav">
+<button onclick="go('home')">🏠 Trang chủ</button>
+<button onclick="go('shop')">🛒 Cửa hàng</button>
+<button onclick="go('repair')">🔧 Giá sửa chữa</button>
+<button onclick="go('booking')">📅 Đặt lịch</button>
+<button class="cart-btn" onclick="openCart()">🛒 Giỏ hàng <span id="cartCount">0</span></button>
+</nav>
+
+</div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-inner">
+
+<div>
+
+<p style="color:#159bd7;font-weight:900;margin-bottom:8px">
+PD TECHCARE
+</p>
+
+<h1>
+Sửa chữa & phụ kiện
+<span>điện thoại</span>
+</h1>
+
+<p>
+Sửa chữa chuyên nghiệp, linh kiện chất lượng,
+phụ kiện chính hãng và hỗ trợ khách hàng tận tình.
+</p>
+
+<div class="hero-buttons">
+
+<button class="btn btn-primary"
+onclick="go('booking')">
+📅 Đặt lịch sửa máy
+</button>
+
+<button class="btn btn-light"
+onclick="go('repair')">
+🔧 Xem bảng giá
+</button>
+
+</div>
+
+</div>
+
+<div class="hero-card">
+
+<div class="hero-phone">
+PD<br>TECHCARE
+</div>
+
+<h3>📱 Chăm sóc điện thoại của bạn</h3>
+
+<p>
+Ép kính • Thay màn • Thay pin • Sửa main
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CATEGORY -->
+
+<section class="container">
+
+<div class="section-title">
+<h2>Danh mục</h2>
+<p>Tìm nhanh sản phẩm bạn đang cần</p>
+</div>
+
+<div class="grid">
+
+<div class="category" onclick="filterShop('Củ sạc')">
+<div class="category-icon">🔌</div>
+<b>Củ sạc</b>
+<small>Sạc nhanh</small>
+</div>
+
+<div class="category" onclick="filterShop('Cáp sạc')">
+<div class="category-icon">🔋</div>
+<b>Cáp sạc</b>
+<small>Type-C / Lightning</small>
+</div>
+
+<div class="category" onclick="filterShop('Tai nghe')">
+<div class="category-icon">🎧</div>
+<b>Tai nghe</b>
+<small>Bluetooth / có dây</small>
+</div>
+
+<div class="category" onclick="filterShop('Cường lực')">
+<div class="category-icon">🛡️</div>
+<b>Cường lực</b>
+<small>Bảo vệ màn hình</small>
+</div>
+
+<div class="category" onclick="filterShop('Ốp lưng')">
+<div class="category-icon">📱</div>
+<b>Ốp lưng</b>
+<small>Bảo vệ máy</small>
+</div>
+
+<div class="category" onclick="filterShop('iPhone')">
+<div class="category-icon">🍎</div>
+<b>iPhone</b>
+<small>Máy đã qua sử dụng</small>
+</div>
+
+<div class="category" onclick="filterShop('Phụ kiện')">
+<div class="category-icon">🧰</div>
+<b>Phụ kiện</b>
+<small>Đồ công nghệ</small>
+</div>
+
+<div class="category" onclick="go('repair')">
+<div class="category-icon">🔧</div>
+<b>Sửa chữa</b>
+<small>Xem bảng giá</small>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SHOP -->
+
+<section class="container" id="shop">
+
+<div class="section-title">
+<h2>🛒 Cửa hàng</h2>
+<p>Phụ kiện và điện thoại tại PD TechCare</p>
+</div>
+
+<div class="search-box">
+<input
+id="productSearch"
+placeholder="🔎 Tìm sản phẩm..."
+oninput="renderProducts()">
+</div>
+
+<div class="product-grid" id="products"></div>
+
+</section>
+
+
+<!-- REPAIR -->
+
+<section class="container" id="repair">
+
+<div class="section-title">
+<h2>🔧 Bảng giá sửa chữa</h2>
+<p>Tham khảo giá trước khi mang máy đến cửa hàng</p>
+</div>
+
+<div class="search-box">
+<input
+id="repairSearch"
+placeholder="🔎 Tìm iPhone, Samsung, thay pin, ép kính..."
+oninput="renderRepairPrices()">
+</div>
+
+<div class="price-wrap">
+
+<table class="price-table">
+
+<thead>
+<tr>
+<th>Hãng / Model</th>
+<th>Dịch vụ</th>
+<th>Giá tham khảo</th>
+</tr>
+</thead>
+
+<tbody id="repairPrices"></tbody>
+
+</table>
+
+</div>
+
+<p style="text-align:center;color:#788893;margin-top:15px">
+* Giá có thể thay đổi tùy tình trạng máy và linh kiện.
+Vui lòng liên hệ PD TechCare để xác nhận giá.
+</p>
+
+</section>
+
+
+<!-- BOOKING -->
+
+<section class="container" id="booking">
+
+<div class="section-title">
+<h2>📅 Đặt lịch sửa máy</h2>
+<p>Điền thông tin, PD TechCare sẽ liên hệ xác nhận</p>
+</div>
+
+<div class="booking">
+
+<div class="form-grid">
+
+<div class="field">
+<label>Họ và tên *</label>
+<input id="bookName" placeholder="Nguyễn Văn A">
+</div>
+
+<div class="field">
+<label>Số điện thoại *</label>
+<input id="bookPhone" type="tel" placeholder="0786833253">
+</div>
+
+<div class="field">
+<label>Hãng điện thoại *</label>
+<select id="bookBrand">
+<option>iPhone</option>
+<option>Samsung</option>
+<option>OPPO</option>
+<option>Vivo</option>
+<option>Xiaomi</option>
+<option>Realme</option>
+<option>Honor</option>
+<option>Huawei</option>
+<option>Nokia</option>
+<option>Khác</option>
+</select>
+</div>
+
+<div class="field">
+<label>Model</label>
+<input id="bookModel" placeholder="Ví dụ: iPhone 15 Pro Max">
+</div>
+
+<div class="field">
+<label>Ngày muốn sửa *</label>
+<input id="bookDate" type="date">
+</div>
+
+<div class="field">
+<label>Giờ muốn đến</label>
+<input id="bookTime" type="time">
+</div>
+
+<div class="field full">
+<label>Lỗi / dịch vụ cần sửa *</label>
+<textarea
+id="bookProblem"
+placeholder="Ví dụ: Bể kính, cần ép kính..."></textarea>
+</div>
+
+<div class="field full">
+<label>Ghi chú</label>
+<textarea
+id="bookNote"
+placeholder="Yêu cầu thêm của khách..."></textarea>
+</div>
+
+</div>
+
+<button class="btn btn-primary"
+style="width:100%;margin-top:5px"
+onclick="submitBooking()">
+📅 GỬI YÊU CẦU ĐẶT LỊCH
+</button>
+
+<p style="text-align:center;color:#788893;margin-top:12px;font-size:13px">
+Sau khi gửi, vui lòng liên hệ Zalo để cửa hàng xác nhận lịch.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-inner">
+
+<div>
+<h2 class="logo" style="color:#fff">
+PD <span style="color:#5ed2ff">TechCare</span>
+</h2>
+
+<p>
+Trung tâm sửa chữa điện thoại,
+phụ kiện và điện thoại tại PD TechCare.
+</p>
+
+<p>
+☎️ Hotline: <b style="color:#fff">0786 833 253</b>
+</p>
+
+<p>
+🟢 Zalo: <b style="color:#fff">0786 833 253</b>
+</p>
+</div>
+
+<div>
+<h3>Danh mục</h3>
+<p>Phụ kiện điện thoại</p>
+<p>iPhone</p>
+<p>Sửa chữa điện thoại</p>
+<p>Đặt lịch sửa máy</p>
+</div>
+
+<div>
+<h3>Hỗ trợ</h3>
+<p>Chính sách bảo hành</p>
+<p>Chính sách sửa chữa</p>
+<p>Liên hệ cửa hàng</p>
+</div>
+
+</div>
+
+<p style="text-align:center;margin-top:30px;border-top:1px solid #ffffff15;padding-top:20px">
+© 2026 PD TechCare. All rights reserved.
+</p>
+
+</footer>
+
+
+<!-- FLOAT CONTACT -->
+
+<div class="float-contact">
+
+<a class="hotline"
+href="tel:0786833253">
+☎️ HOTLINE
+</a>
+
+<a class="zalo"
+href="https://zalo.me/0786833253"
+target="_blank">
+🟢 ZALO
+</a>
+
+</div>
+
+
+<!-- CART -->
+
+<div class="cart-panel" id="cartPanel" onclick="closeCartOutside(event)">
+
+<div class="cart">
+
+<div class="cart-head">
+
+<h2>🛒 Giỏ hàng</h2>
+
+<button onclick="closeCart()">✕</button>
+
+</div>
+
+<div id="cartItems"></div>
+
+<div class="cart-total">
+Tổng: <span id="cartTotal">0đ</span>
+</div>
+
+<button class="btn btn-primary"
+style="width:100%"
+onclick="checkout()">
+📦 ĐẶT HÀNG
+</button>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT MODAL -->
+
+<div class="modal" id="productModal">
+
+<div class="modal-box">
+
+<div class="modal-head">
+
+<h2 id="modalTitle"></h2>
+
+<button class="close"
+onclick="closeProduct()">
+✕
+</button>
+
+</div>
+
+<div id="modalBody"></div>
+
+</div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div class="toast" id="toast"></div>
+
+
+<script>
+
+/* =========================
+   SẢN PHẨM
+========================= */
+
+const products=[
+
+{
+id:1,
+name:"Củ sạc nhanh 20W",
+category:"Củ sạc",
+price:150000,
+icon:"🔌",
+desc:"Củ sạc nhanh 20W, phù hợp nhiều thiết bị."
+},
+
+{
+id:2,
+name:"Củ sạc nhanh 33W",
+category:"Củ sạc",
+price:220000,
+icon:"🔌",
+desc:"Củ sạc công suất cao, hỗ trợ sạc nhanh."
+},
+
+{
+id:3,
+name:"Cáp Type-C 1m",
+category:"Cáp sạc",
+price:99000,
+icon:"🔋",
+desc:"Cáp Type-C dài 1m, dùng sạc và truyền dữ liệu."
+},
+
+{
+id:4,
+name:"Cáp Lightning 1m",
+category:"Cáp sạc",
+price:120000,
+icon:"🔋",
+desc:"Cáp Lightning dành cho iPhone."
+},
+
+{
+id:5,
+name:"Tai nghe Bluetooth",
+category:"Tai nghe",
+price:350000,
+icon:"🎧",
+desc:"Tai nghe Bluetooth không dây."
+},
+
+{
+id:6,
+name:"Tai nghe có dây",
+category:"Tai nghe",
+price:120000,
+icon:"🎧",
+desc:"Tai nghe có dây sử dụng tiện lợi."
+},
+
+{
+id:7,
+name:"Cường lực iPhone",
+category:"Cường lực",
+price:70000,
+icon:"🛡️",
+desc:"Kính cường lực bảo vệ màn hình iPhone."
+},
+
+{
+id:8,
+name:"Cường lực Samsung",
+category:"Cường lực",
+price:70000,
+icon:"🛡️",
+desc:"Kính cường lực dành cho Samsung."
+},
+
+{
+id:9,
+name:"Ốp lưng điện thoại",
+category:"Ốp lưng",
+price:80000,
+icon:"📱",
+desc:"Ốp lưng chống va đập."
+},
+
+{
+id:10,
+name:"iPhone 13 128GB",
+category:"iPhone",
+price:10500000,
+icon:"📱",
+desc:"iPhone 13 128GB, máy đã qua sử dụng. Liên hệ để kiểm tra máy thực tế."
+},
+
+{
+id:11,
+name:"iPhone 14 128GB",
+category:"iPhone",
+price:12500000,
+icon:"📱",
+desc:"iPhone 14 128GB, máy đã qua sử dụng."
+},
+
+{
+id:12,
+name:"iPhone 15 128GB",
+category:"iPhone",
+price:14500000,
+icon:"📱",
+desc:"iPhone 15 128GB."
+},
+
+{
+id:13,
+name:"Bộ vệ sinh điện thoại",
+category:"Phụ kiện",
+price:50000,
+icon:"🧰",
+desc:"Bộ dụng cụ vệ sinh thiết bị."
+},
+
+{
+id:14,
+name:"Giá đỡ điện thoại",
+category:"Phụ kiện",
+price:90000,
+icon:"📱",
+desc:"Giá đỡ điện thoại để bàn."
+}
+
+];
+
+
+/* =========================
+   GIÁ SỬA
+========================= */
+
+const repairPrices=[
+
+["iPhone 7","Thay pin","Liên hệ"],
+["iPhone 8","Thay pin","Liên hệ"],
+["iPhone X","Thay pin","Liên hệ"],
+["iPhone XS","Thay pin","Liên hệ"],
+["iPhone 11","Thay pin","Liên hệ"],
+["iPhone 12","Thay pin","Liên hệ"],
+["iPhone 13","Thay pin","Liên hệ"],
+["iPhone 14","Thay pin","Liên hệ"],
+["iPhone 15","Thay pin","Liên hệ"],
+["iPhone 16","Thay pin","Liên hệ"],
+["iPhone 17","Thay pin","Liên hệ"],
+
+["iPhone X","Ép kính","Liên hệ"],
+["iPhone 11","Ép kính","Liên hệ"],
+["iPhone 12","Ép kính","Liên hệ"],
+["iPhone 13","Ép kính","Liên hệ"],
+["iPhone 14","Ép kính","Liên hệ"],
+["iPhone 15","Ép kính","Liên hệ"],
+["iPhone 16","Ép kính","Liên hệ"],
+["iPhone 17","Ép kính","Liên hệ"],
+
+["iPhone 11","Thay màn hình","Liên hệ"],
+["iPhone 12","Thay màn hình","Liên hệ"],
+["iPhone 13","Thay màn hình","Liên hệ"],
+["iPhone 14","Thay màn hình","Liên hệ"],
+["iPhone 15","Thay màn hình","Liên hệ"],
+["iPhone 16","Thay màn hình","Liên hệ"],
+["iPhone 17","Thay màn hình","Liên hệ"],
+
+["Samsung A Series","Thay màn hình","Liên hệ"],
+["Samsung S Series","Thay màn hình","Liên hệ"],
+["Samsung Note Series","Thay màn hình","Liên hệ"],
+["Samsung Z Series","Thay màn hình","Liên hệ"],
+
+["Samsung","Thay pin","Liên hệ"],
+["Samsung","Ép kính","Liên hệ"],
+
+["OPPO","Thay màn hình","Liên hệ"],
+["OPPO","Thay pin","Liên hệ"],
+["OPPO","Ép kính","Liên hệ"],
+
+["Vivo","Thay màn hình","Liên hệ"],
+["Vivo","Thay pin","Liên hệ"],
+["Vivo","Ép kính","Liên hệ"],
+
+["Xiaomi","Thay màn hình","Liên hệ"],
+["Xiaomi","Thay pin","Liên hệ"],
+["Xiaomi","Ép kính","Liên hệ"],
+
+["Realme","Thay màn hình","Liên hệ"],
+["Realme","Thay pin","Liên hệ"],
+
+["Honor","Thay màn hình","Liên hệ"],
+["Honor","Thay pin","Liên hệ"],
+["Honor","Ép kính","Liên hệ"],
+
+["Huawei","Thay màn hình","Liên hệ"],
+["Huawei","Thay pin","Liên hệ"],
+
+["Tất cả dòng","Sửa main","Liên hệ"],
+["Tất cả dòng","Sửa Face ID","Liên hệ"],
+["Tất cả dòng","Sửa camera","Liên hệ"],
+["Tất cả dòng","Sửa mic / loa","Liên hệ"],
+["Tất cả dòng","Sửa sạc","Liên hệ"]
+
+];
+
+
+/* =========================
+   GIỎ HÀNG
+========================= */
+
+let cart=
+JSON.parse(localStorage.getItem("PDTC_SHOP_CART")||"[]");
+
+
+function money(value){
+
+return Number(value||0).toLocaleString("vi-VN")+"đ";
+
+}
+
+
+function saveCart(){
+
+localStorage.setItem(
+"PDTC_SHOP_CART",
+JSON.stringify(cart)
+);
+
+}
+
+
+function showToast(text){
+
+const toast=document.getElementById("toast");
+
+toast.textContent=text;
+
+toast.classList.add("show");
+
+setTimeout(()=>{
+toast.classList.remove("show");
+},2200);
+
+}
+
+
+/* =========================
+   HIỂN THỊ SẢN PHẨM
+========================= */
+
+function renderProducts(){
+
+const search=
+(document.getElementById("productSearch").value||"")
+.toLowerCase();
+
+const list=products.filter(p=>{
+
+return (
+p.name.toLowerCase().includes(search) ||
+p.category.toLowerCase().includes(search)
+);
+
+});
+
+
+document.getElementById("products").innerHTML=
+
+list.map(p=>`
+
+<div class="product">
+
+<div class="product-img">
+${p.icon}
+</div>
+
+<div class="product-body">
+
+<div class="product-name">
+${p.name}
+</div>
+
+<div class="product-price">
+${money(p.price)}
+</div>
+
+<div class="product-actions">
+
+<button
+class="btn btn-light"
+onclick="viewProduct(${p.id})">
+Chi tiết
+</button>
+
+<button
+class="btn btn-primary"
+onclick="addCart(${p.id})">
+🛒 Thêm
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+`).join("");
+
+
+if(!list.length){
+
+document.getElementById("products").innerHTML=
+`
+<div style="grid-column:1/-1;text-align:center;padding:40px;color:#71808e">
+Không tìm thấy sản phẩm.
+</div>
+`;
+
+}
+
+}
+
+
+/* =========================
+   LỌC SHOP
+========================= */
+
+function filterShop(category){
+
+document.getElementById("productSearch").value=category;
+
+go("shop");
+
+renderProducts();
+
+}
+
+
+/* =========================
+   GIỎ HÀNG
+========================= */
+
+function addCart(id){
+
+const p=products.find(x=>x.id===id);
+
+if(!p)return;
+
+const old=cart.find(x=>x.id===id);
+
+if(old){
+
+old.qty++;
+
+}else{
+
+cart.push({
+id:p.id,
+qty:1
+});
+
+}
+
+saveCart();
+
+renderCart();
+
+showToast("🛒 Đã thêm vào giỏ hàng");
+
+}
+
+
+function removeCart(id){
+
+cart=cart.filter(x=>x.id!==id);
+
+saveCart();
+
+renderCart();
+
+}
+
+
+function changeQty(id,num){
+
+const item=cart.find(x=>x.id===id);
+
+if(!item)return;
+
+item.qty+=num;
+
+if(item.qty<=0){
+
+removeCart(id);
+return;
+
+}
+
+saveCart();
+
+renderCart();
+
+}
+
+
+function renderCart(){
+
+let count=0;
+let total=0;
+
+cart.forEach(item=>{
+
+const p=products.find(x=>x.id===item.id);
+
+if(p){
+
+count+=item.qty;
+total+=p.price*item.qty;
+
+}
+
+});
+
+
+document.getElementById("cartCount").textContent=count;
+
+document.getElementById("cartTotal").textContent=money(total);
+
+
+const box=document.getElementById("cartItems");
+
+
+if(!cart.length){
+
+box.innerHTML=
+`
+<div style="text-align:center;padding:50px 10px;color:#71808e">
+🛒<br><br>
+Giỏ hàng đang trống.
+</div>
+`;
+
+return;
+
+}
+
+
+box.innerHTML=
+
+cart.map(item=>{
+
+const p=products.find(x=>x.id===item.id);
+
+if(!p)return"";
+
+return`
+
+<div class="cart-item">
+
+<div class="cart-item-top">
+
+<div>
+
+<b>${p.name}</b>
+
+<div style="color:#159bd7;font-weight:900;margin-top:5px">
+${money(p.price)}
+</div>
+
+</div>
+
+<button
+style="border:0;background:#fff;color:#e53935"
+onclick="removeCart(${p.id})">
+✕
+</button>
+
+</div>
+
+<div class="qty">
+
+<button onclick="changeQty(${p.id},-1)">−</button>
+
+<b>${item.qty}</b>
+
+<button onclick="changeQty(${p.id},1)">+</button>
+
+</div>
+
+</div>
+
+`;
+
+}).join("");
+
+}
+
+
+function openCart(){
+
+renderCart();
+
+document.getElementById("cartPanel").classList.add("show");
+
+}
+
+
+function closeCart(){
+
+document.getElementById("cartPanel").classList.remove("show");
+
+}
+
+
+function closeCartOutside(e){
+
+if(e.target.id==="cartPanel"){
+
+closeCart();
+
+}
+
+}
+
+
+/* =========================
+   XEM SẢN PHẨM
+========================= */
+
+function viewProduct(id){
+
+const p=products.find(x=>x.id===id);
+
+if(!p)return;
+
+document.getElementById("modalTitle").textContent=p.name;
+
+document.getElementById("modalBody").innerHTML=`
+
+<div style="
+font-size:100px;
+text-align:center;
+background:#effaff;
+padding:30px;
+border-radius:15px">
+${p.icon}
+</div>
+
+<p style="margin:20px 0;line-height:1.7">
+${p.desc}
+</p>
+
+<h2 style="color:#159bd7;margin-bottom:15px">
+${money(p.price)}
+</h2>
+
+<button
+class="btn btn-primary"
+style="width:100%"
+onclick="addCart(${p.id});closeProduct()">
+🛒 THÊM VÀO GIỎ HÀNG
+</button>
+
+`;
+
+document.getElementById("productModal")
+.classList.add("show");
+
+}
+
+
+function closeProduct(){
+
+document.getElementById("productModal")
+.classList.remove("show");
+
+}
+
+
+/* =========================
+   ĐẶT HÀNG
+========================= */
+
+function checkout(){
+
+if(!cart.length){
+
+showToast("Giỏ hàng đang trống");
+
+return;
+
+}
+
+const items=cart.map(item=>{
+
+const p=products.find(x=>x.id===item.id);
+
+return `${p.name} x${item.qty}`;
+
+}).join("\n");
+
+const total=cart.reduce((sum,item)=>{
+
+const p=products.find(x=>x.id===item.id);
+
+return sum+p.price*item.qty;
+
+},0);
+
+
+const text=
+`Xin chào PD TechCare, tôi muốn đặt hàng:
+
+${items}
+
+Tổng dự kiến: ${money(total)}
+
+Tên khách:
+SĐT:
+Địa chỉ:`;
+
+
+const url=
+"https://zalo.me/0786833253";
+
+
+alert(
+"Đơn hàng đã được chuẩn bị.\n\n"+
+"Vui lòng bấm OK để mở Zalo và gửi đơn hàng cho PD TechCare."
+);
+
+
+window.open(url,"_blank");
+
+
+}
+
+
+/* =========================
+   GIÁ SỬA
+========================= */
+
+function renderRepairPrices(){
+
+const search=
+(document.getElementById("repairSearch").value||"")
+.toLowerCase();
+
+const list=repairPrices.filter(row=>
+row.join(" ").toLowerCase().includes(search)
+);
+
+
+document.getElementById("repairPrices").innerHTML=
+
+list.map(row=>`
+
+<tr>
+
+<td><b>${row[0]}</b></td>
+
+<td>${row[1]}</td>
+
+<td class="price">${row[2]}</td>
+
+</tr>
+
+`).join("");
+
+
+}
+
+
+/* =========================
+   ĐẶT LỊCH
+========================= */
+
+function submitBooking(){
+
+const name=
+document.getElementById("bookName").value.trim();
+
+const phone=
+document.getElementById("bookPhone").value.trim();
+
+const model=
+document.getElementById("bookModel").value.trim();
+
+const date=
+document.getElementById("bookDate").value;
+
+const time=
+document.getElementById("bookTime").value;
+
+const problem=
+document.getElementById("bookProblem").value.trim();
+
+const brand=
+document.getElementById("bookBrand").value;
+
+const note=
+document.getElementById("bookNote").value.trim();
+
+
+if(!name||!phone||!date||!problem){
+
+alert(
+"Vui lòng nhập đầy đủ:\n"+
+"Họ tên\n"+
+"Số điện thoại\n"+
+"Ngày sửa\n"+
+"Lỗi cần sửa"
+);
+
+return;
+
+}
+
+
+const message=
+`PD TECHCARE - ĐẶT LỊCH SỬA MÁY
+
+👤 Khách: ${name}
+📞 SĐT: ${phone}
+📱 Máy: ${brand} ${model}
+📅 Ngày: ${date}
+⏰ Giờ: ${time||"Chưa chọn"}
+
+🔧 Lỗi cần sửa:
+${problem}
+
+📝 Ghi chú:
+${note||"Không có"}`;
+
+
+const zalo=
+"https://zalo.me/0786833253";
+
+
+navigator.clipboard
+?.writeText(message)
+.catch(()=>{});
+
+
+alert(
+"✅ Đã tạo thông tin đặt lịch.\n\n"+
+"Thông tin đã được sao chép nếu trình duyệt cho phép.\n\n"+
+"Bấm OK để mở Zalo và gửi cho PD TechCare."
+);
+
+
+window.open(zalo,"_blank");
+
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+function toggleMenu(){
+
+document
+.getElementById("nav")
+.classList.toggle("show");
+
+}
+
+
+function go(id){
+
+document
+.getElementById(id)
+.scrollIntoView({
+behavior:"smooth"
+});
+
+document
+.getElementById("nav")
+.classList.remove("show");
+
+}
+
+
+/* =========================
+   KHỞI ĐỘNG
+========================= */
+
+renderProducts();
+
+renderRepairPrices();
+
+renderCart();
+
+
+/* ngày mặc định */
+
+const today=
+new Date().toISOString().slice(0,10);
+
+document.getElementById("bookDate").min=today;
+
+document.getElementById("bookDate").value=today;
+
+</script>
+
+</body>
+</html>
