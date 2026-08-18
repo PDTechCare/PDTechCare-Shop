@@ -3,304 +3,291 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#159bd7">
-<title>PD TechCare</title>
+<title>PD TechCare Shop</title>
 
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-html,body{margin:0;padding:0;overflow-x:hidden}
-body{
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-background:#f5fbff;color:#17212b
-}
+body{margin:0;font-family:Arial,-apple-system,BlinkMacSystemFont,sans-serif;background:#f5fbff;color:#17212b}
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
 a{text-decoration:none}
-
-header{
-position:sticky;top:0;z-index:1000;background:#fff;
-box-shadow:0 2px 15px #0001
-}
-.header{
-max-width:1200px;margin:auto;padding:12px 16px;
-display:flex;align-items:center;justify-content:space-between
-}
-.logo{font-size:24px;font-weight:900;color:#159bd7}
-.logo span{color:#111}
-
-.nav{display:flex;gap:6px}
-.nav button{
-border:0;background:#fff;padding:10px 12px;
-border-radius:10px;font-weight:700
-}
-.nav button:hover{background:#eaf8ff;color:#159bd7}
-.admin-btn{background:#10212b!important;color:#fff!important}
-.cart-btn{background:#159bd7!important;color:#fff!important}
-
-.menu{
-display:none;border:0;background:#eaf8ff;
-padding:9px 12px;border-radius:10px;font-size:20px
-}
-
-.container{max-width:1200px;margin:auto;padding:50px 16px}
-.title{text-align:center;margin-bottom:28px}
-.title h2{font-size:32px;margin:0 0 8px}
+.container{max-width:1200px;margin:auto;padding:45px 15px}
+.btn{border:0;border-radius:11px;padding:12px 17px;font-weight:bold}
+.primary{background:#159bd7;color:#fff}
+.light{background:#fff;color:#159bd7;border:1px solid #d8eaf2}
+.title{text-align:center;margin-bottom:25px}
+.title h2{margin-bottom:5px}
 .title p{color:#71818d}
 
-.btn{
-border:0;border-radius:12px;padding:12px 18px;font-weight:800
-}
-.primary{background:#159bd7;color:#fff}
-.light{background:#fff;color:#159bd7;border:1px solid #dceff7}
+/* HEADER */
+header{position:sticky;top:0;z-index:1000;background:#fff;box-shadow:0 2px 15px #0002}
+.head{max-width:1200px;margin:auto;padding:12px 15px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:24px;font-weight:900;color:#159bd7}
+.logo span{color:#111}
+.nav{display:flex;gap:5px}
+.nav button{border:0;background:#fff;padding:10px;border-radius:10px;font-weight:bold}
+.nav .admin{background:#10212b;color:#fff}
+.nav .cart{background:#159bd7;color:#fff}
+.menu{display:none;border:0;background:#eaf8ff;padding:9px;border-radius:10px;font-size:20px}
 
 /* HERO */
-.hero{
-padding:70px 16px;
-background:linear-gradient(135deg,#eafaff,#fff)
-}
-.hero-inner{
-max-width:1200px;margin:auto;
-display:grid;grid-template-columns:1.1fr .9fr;
-gap:40px;align-items:center
-}
-.hero h1{
-font-size:clamp(38px,6vw,64px);
-line-height:1.05;margin:12px 0 18px
-}
+.hero{padding:65px 15px;background:linear-gradient(135deg,#eafaff,#fff)}
+.hero-in{max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+.hero h1{font-size:clamp(38px,6vw,62px);line-height:1.05}
 .hero h1 span{color:#159bd7}
-.hero p{font-size:18px;color:#647582;line-height:1.7}
-.hero-buttons{display:flex;gap:10px;flex-wrap:wrap}
-.hero-card{
-background:#fff;padding:30px;border-radius:25px;
-text-align:center;box-shadow:0 15px 45px #159bd71a
-}
-.phone{
-width:150px;height:280px;margin:auto;
-background:#10212b;color:#fff;border-radius:28px;
-display:grid;place-items:center;font-weight:900
-}
+.hero p{color:#647582;font-size:18px;line-height:1.7}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap}
+.hero-card{background:#fff;border-radius:25px;padding:30px;text-align:center;box-shadow:0 15px 40px #159bd722}
+.phone{width:150px;height:280px;margin:auto;background:#10212b;color:#fff;border-radius:28px;display:grid;place-items:center;font-weight:bold}
 
 /* CATEGORY */
-.category-grid{
-display:grid;grid-template-columns:repeat(4,1fr);gap:15px
-}
-.category{
-background:#fff;border:1px solid #e1edf2;
-border-radius:17px;padding:22px;text-align:center
-}
-.category-icon{font-size:38px;margin-bottom:8px}
-
-/* SEARCH */
-.search{max-width:600px;margin:0 auto 20px}
-.search input{
-width:100%;padding:14px 16px;
-border:1px solid #d8eaf1;border-radius:13px;outline:none
-}
+.grid,.products{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.cat,.product{background:#fff;border:1px solid #e1edf2;border-radius:17px;overflow:hidden}
+.cat{padding:22px;text-align:center}
+.cat div{font-size:35px;margin-bottom:8px}
 
 /* PRODUCTS */
-.products{
-display:grid;grid-template-columns:repeat(4,1fr);gap:15px
-}
-.product{
-background:#fff;border:1px solid #e1edf2;
-border-radius:17px;overflow:hidden
-}
-.product-image{
-height:185px;background:#edfaff;
-display:grid;place-items:center;font-size:65px;overflow:hidden
-}
-.product-image img{width:100%;height:100%;object-fit:cover}
-.product-body{padding:14px}
-.product-name{font-weight:900;min-height:42px}
-.product-price{
-color:#0798d8;font-weight:900;font-size:19px;margin:8px 0 12px
-}
-.product-actions{display:flex;gap:7px}
-.product-actions button{flex:1}
+.search{max-width:600px;margin:0 auto 20px}
+.search input{width:100%;padding:14px;border:1px solid #d8eaf1;border-radius:13px}
+.pimg{height:180px;background:#edfaff;display:grid;place-items:center;font-size:60px;overflow:hidden}
+.pimg img{width:100%;height:100%;object-fit:cover}
+.pbody{padding:14px}
+.pname{font-weight:bold;min-height:42px}
+.price{color:#0798d8;font-weight:bold;font-size:19px;margin:8px 0 12px}
+.actions{display:flex;gap:7px}
+.actions button{flex:1}
 
 /* TABLE */
-.table-box{background:#fff;border-radius:17px;overflow:auto}
-table{border-collapse:collapse;width:100%;min-width:600px}
-th,td{padding:13px;border-bottom:1px solid #edf2f5;text-align:left}
+.table{background:#fff;border-radius:17px;overflow:auto}
+table{width:100%;min-width:600px;border-collapse:collapse}
+th,td{padding:13px;border-bottom:1px solid #eee;text-align:left}
 th{background:#159bd7;color:#fff}
 
 /* BOOKING */
-.booking{
-max-width:850px;margin:auto;background:#fff;
-padding:24px;border-radius:20px
-}
-.form-grid{
-display:grid;grid-template-columns:1fr 1fr;gap:14px
-}
-.field.full{grid-column:1/-1}
-.field label{display:block;font-weight:800;margin-bottom:6px}
-.field input,.field select,.field textarea{
-width:100%;padding:12px;
-border:1px solid #d9e9ef;border-radius:10px;outline:none
-}
-.field textarea{min-height:100px}
+.booking{max-width:850px;margin:auto;background:#fff;padding:22px;border-radius:20px}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.full{grid-column:1/-1}
+.field label{display:block;font-weight:bold;margin-bottom:5px}
+.field input,.field select,.field textarea{width:100%;padding:12px;border:1px solid #d8e8ef;border-radius:10px}
+.field textarea{min-height:90px}
 
 /* FOOTER */
-footer{background:#10212b;color:#fff;padding:42px 16px}
-.footer{
-max-width:1200px;margin:auto;
-display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px
-}
+footer{background:#10212b;color:#fff;padding:40px 15px}
+.footer{max-width:1200px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:25px}
 .footer p{color:#b9c8cf;line-height:1.7}
 .footer a{color:#fff}
-.map-button{display:inline-block;margin-top:8px}
 
 /* FLOAT */
-.float{
-position:fixed;left:12px;bottom:12px;z-index:2000;
-display:flex;flex-direction:column;gap:8px
-}
-.float a{
-color:#fff;padding:10px 14px;border-radius:25px;
-font-weight:900;box-shadow:0 5px 15px #0003
-}
-.hotline{background:#e53935}
+.float{position:fixed;left:12px;bottom:12px;z-index:1000;display:flex;flex-direction:column;gap:7px}
+.float a{color:#fff;padding:10px 14px;border-radius:25px;font-weight:bold}
+.hot{background:#e53935}
 .zalo{background:#078fe0}
 
-/* OVERLAY - ĐÃ SỬA LỖI SAFARI */
-.overlay{
+/* LOGIN */
+.loginbox{
 display:none;
 position:fixed;
 inset:0;
+z-index:4000;
 background:#0008;
-z-index:3000;
-overflow-y:auto;
-overflow-x:hidden;
--webkit-overflow-scrolling:touch;
-touch-action:pan-y;
+padding:20px
 }
-.overlay.show{display:block}
-
-/* CART */
-.cart-panel{
-position:absolute;right:0;top:0;
-min-height:100%;
-width:min(460px,100%);
-background:#fff;padding:20px;overflow:auto
-}
-.panel-head{
-display:flex;align-items:center;justify-content:space-between
-}
-.close{
-border:0;background:#edf7fb;padding:8px 12px;border-radius:9px
-}
-.cart-item{padding:14px 0;border-bottom:1px solid #eee}
-
-/* LOGIN */
+.loginbox.show{display:block}
 .login{
-max-width:400px;margin:80px auto;
-background:#fff;border-radius:20px;padding:25px
-}
-.login h2{text-align:center}
-.login input{
-width:100%;padding:12px;margin-bottom:10px;
-border:1px solid #d8e8ef;border-radius:10px
-}
-
-/* ADMIN */
-.admin-box{
-max-width:1100px;
-margin:25px auto;
+max-width:400px;
+margin:80px auto;
 background:#fff;
 border-radius:20px;
-overflow:hidden;
-min-height:calc(100vh - 50px);
+padding:25px
 }
-.admin-head{
-background:#10212b;color:#fff;padding:17px;
-display:flex;justify-content:space-between;align-items:center
-}
-.admin-body{
-padding:18px;
-padding-bottom:60px;
-touch-action:pan-y;
-}
-.admin-tabs{
-display:flex;gap:8px;overflow:auto;margin-bottom:18px
-}
-.admin-tabs button{
-border:0;background:#eaf8ff;color:#078fca;
-padding:10px 13px;border-radius:9px;
-font-weight:800;white-space:nowrap
-}
-.admin-tab{
+.login input{width:100%;padding:12px;margin-bottom:10px;border:1px solid #ddd;border-radius:10px}
+
+/* CART */
+.cartbox{
 display:none;
-touch-action:pan-y;
+position:fixed;
+inset:0;
+z-index:3500;
+background:#0008
 }
+.cartbox.show{display:block}
+.cart{
+position:absolute;
+right:0;
+top:0;
+height:100%;
+width:min(450px,100%);
+background:#fff;
+padding:20px;
+overflow:auto
+}
+
+/* ADMIN PAGE */
+#adminPage{
+display:none;
+min-height:100vh;
+background:#f5fbff
+}
+
+.admin-head{
+position:sticky;
+top:0;
+z-index:50;
+background:#10212b;
+color:#fff;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center
+}
+
+.admin-content{
+max-width:1100px;
+margin:auto;
+padding:20px 15px 100px
+}
+
+.admin-tabs{
+display:flex;
+gap:8px;
+overflow-x:auto;
+-webkit-overflow-scrolling:touch;
+margin-bottom:20px
+}
+
+.admin-tabs button{
+border:0;
+background:#fff;
+padding:12px 15px;
+border-radius:10px;
+font-weight:bold;
+white-space:nowrap
+}
+
+.admin-tabs button.active{
+background:#159bd7;
+color:#fff
+}
+
+.admin-tab{display:none}
 .admin-tab.active{display:block}
+
 .admin-card{
-background:#f8fcfe;border:1px solid #e1edf2;
-border-radius:14px;padding:14px;margin-bottom:12px
+background:#fff;
+border:1px solid #e0edf2;
+border-radius:15px;
+padding:15px;
+margin-bottom:12px
 }
+
 .admin-grid{
-display:grid;grid-template-columns:1fr 1fr;gap:10px
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px
 }
+
 .admin-card label{
-display:block;font-size:13px;font-weight:800;
+display:block;
+font-size:13px;
+font-weight:bold;
 margin:7px 0 4px
 }
+
 .admin-card input,
 .admin-card select,
 .admin-card textarea{
-width:100%;padding:10px;
-border:1px solid #d6e7ee;border-radius:8px
+width:100%;
+padding:10px;
+border:1px solid #d5e6ed;
+border-radius:8px
 }
+
 .admin-card textarea{min-height:80px}
+
 .admin-actions{
-margin-top:10px;display:flex;gap:8px;flex-wrap:wrap
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+margin-top:10px
 }
 
-/* TOAST */
+.empty{text-align:center;padding:35px;color:#758692}
+
 .toast{
-position:fixed;left:50%;bottom:25px;
+position:fixed;
+left:50%;
+bottom:25px;
 transform:translate(-50%,100px);
-background:#10212b;color:#fff;padding:12px 17px;
-border-radius:10px;opacity:0;z-index:5000;transition:.25s
+background:#10212b;
+color:#fff;
+padding:12px 18px;
+border-radius:10px;
+opacity:0;
+z-index:6000;
+transition:.25s
 }
-.toast.show{transform:translate(-50%,0);opacity:1}
-.empty{text-align:center;padding:35px;color:#748590}
+.toast.show{
+transform:translate(-50%,0);
+opacity:1
+}
 
-/* MOBILE */
 @media(max-width:900px){
-.hero-inner{grid-template-columns:1fr}
-.category-grid,.products{grid-template-columns:repeat(2,1fr)}
-.footer{grid-template-columns:1fr 1fr}
+.hero-in{grid-template-columns:1fr}
+.grid,.products{grid-template-columns:repeat(2,1fr)}
 }
 
 @media(max-width:650px){
+
 .menu{display:block}
+
 .nav{
-display:none;position:absolute;top:62px;left:0;right:0;
-background:#fff;padding:8px;flex-direction:column;
-box-shadow:0 10px 20px #0001
+display:none;
+position:absolute;
+top:60px;
+left:0;
+right:0;
+background:#fff;
+padding:8px;
+flex-direction:column;
+box-shadow:0 10px 20px #0002
 }
+
 .nav.show{display:flex}
 .nav button{text-align:left}
-.form-grid,.admin-grid{grid-template-columns:1fr}
-.field.full{grid-column:auto}
-.footer{grid-template-columns:1fr}
-.product-image{height:145px}
-.container{padding:35px 12px}
+
+.form,.admin-grid{
+grid-template-columns:1fr
+}
+
+.full{grid-column:auto}
+
+.footer{
+grid-template-columns:1fr
+}
+
+.pimg{
+height:145px
+}
+
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<div class="header">
+<!-- WEBSITE -->
 
-<a class="logo" href="#home">
+<div id="website">
+
+<header>
+<div class="head">
+
+<a href="#home" class="logo">
 PD <span>TechCare</span>
 </a>
 
-<button class="menu" onclick="toggleMenu()">☰</button>
+<button class="menu" onclick="menu()">☰</button>
 
 <nav class="nav" id="nav">
 
@@ -309,11 +296,11 @@ PD <span>TechCare</span>
 <button onclick="go('repair')">🔧 Giá sửa</button>
 <button onclick="go('booking')">📅 Đặt lịch</button>
 
-<button class="cart-btn" onclick="openCart()">
+<button class="cart" onclick="openCart()">
 🛒 Giỏ <span id="cartCount">0</span>
 </button>
 
-<button class="admin-btn" onclick="openLogin()">
+<button class="admin" onclick="openLogin()">
 🔐 Admin
 </button>
 
@@ -323,10 +310,14 @@ PD <span>TechCare</span>
 
 
 <section class="hero" id="home">
-<div class="hero-inner">
+
+<div class="hero-in">
 
 <div>
-<b style="color:#159bd7">PD TECHCARE</b>
+
+<b style="color:#159bd7">
+PD TECHCARE
+</b>
 
 <h1>
 Sửa chữa &
@@ -334,11 +325,10 @@ Sửa chữa &
 </h1>
 
 <p>
-Tham khảo giá sửa chữa, xem phụ kiện,
-iPhone và đặt lịch sửa máy nhanh chóng.
+Ép kính • Thay màn hình • Thay pin • Sửa main
 </p>
 
-<div class="hero-buttons">
+<div class="hero-btns">
 
 <button class="btn primary" onclick="go('booking')">
 📅 Đặt lịch sửa máy
@@ -349,6 +339,7 @@ iPhone và đặt lịch sửa máy nhanh chóng.
 </button>
 
 </div>
+
 </div>
 
 <div class="hero-card">
@@ -359,9 +350,8 @@ PD<br>TECHCARE
 
 <h3>📱 Chăm sóc điện thoại của bạn</h3>
 
-<p>Ép kính • Thay màn • Thay pin • Sửa main</p>
-
 </div>
+
 </div>
 </section>
 
@@ -373,46 +363,38 @@ PD<br>TECHCARE
 <p>Tìm nhanh sản phẩm</p>
 </div>
 
-<div class="category-grid">
+<div class="grid">
 
-<div class="category" onclick="filterShop('Củ sạc')">
-<div class="category-icon">🔌</div>
-<b>Củ sạc</b>
+<div class="cat" onclick="filterShop('Củ sạc')">
+<div>🔌</div><b>Củ sạc</b>
 </div>
 
-<div class="category" onclick="filterShop('Cáp sạc')">
-<div class="category-icon">🔋</div>
-<b>Cáp sạc</b>
+<div class="cat" onclick="filterShop('Cáp sạc')">
+<div>🔋</div><b>Cáp sạc</b>
 </div>
 
-<div class="category" onclick="filterShop('Tai nghe')">
-<div class="category-icon">🎧</div>
-<b>Tai nghe</b>
+<div class="cat" onclick="filterShop('Tai nghe')">
+<div>🎧</div><b>Tai nghe</b>
 </div>
 
-<div class="category" onclick="filterShop('Cường lực')">
-<div class="category-icon">🛡️</div>
-<b>Cường lực</b>
+<div class="cat" onclick="filterShop('Cường lực')">
+<div>🛡️</div><b>Cường lực</b>
 </div>
 
-<div class="category" onclick="filterShop('Ốp lưng')">
-<div class="category-icon">📱</div>
-<b>Ốp lưng</b>
+<div class="cat" onclick="filterShop('Ốp lưng')">
+<div>📱</div><b>Ốp lưng</b>
 </div>
 
-<div class="category" onclick="filterShop('iPhone')">
-<div class="category-icon">📱</div>
-<b>iPhone</b>
+<div class="cat" onclick="filterShop('iPhone')">
+<div>📱</div><b>iPhone</b>
 </div>
 
-<div class="category" onclick="filterShop('Phụ kiện')">
-<div class="category-icon">🧰</div>
-<b>Phụ kiện</b>
+<div class="cat" onclick="filterShop('Phụ kiện')">
+<div>🧰</div><b>Phụ kiện</b>
 </div>
 
-<div class="category" onclick="go('repair')">
-<div class="category-icon">🔧</div>
-<b>Sửa chữa</b>
+<div class="cat" onclick="go('repair')">
+<div>🔧</div><b>Sửa chữa</b>
 </div>
 
 </div>
@@ -427,17 +409,12 @@ PD<br>TECHCARE
 </div>
 
 <div class="search">
-<input
-id="productSearch"
+<input id="productSearch"
 placeholder="🔎 Tìm sản phẩm..."
 oninput="renderProducts()">
 </div>
 
-<div class="products" id="products">
-<div class="empty" style="grid-column:1/-1">
-Đang tải sản phẩm...
-</div>
-</div>
+<div class="products" id="products"></div>
 
 </section>
 
@@ -450,13 +427,12 @@ oninput="renderProducts()">
 </div>
 
 <div class="search">
-<input
-id="repairSearch"
+<input id="repairSearch"
 placeholder="🔎 Tìm model hoặc dịch vụ..."
 oninput="renderRepairs()">
 </div>
 
-<div class="table-box">
+<div class="table">
 
 <table>
 
@@ -480,12 +456,12 @@ oninput="renderRepairs()">
 
 <div class="title">
 <h2>📅 Đặt lịch sửa máy</h2>
-<p>Khách không cần tạo tài khoản</p>
+<p>Không cần tài khoản</p>
 </div>
 
 <div class="booking">
 
-<div class="form-grid">
+<div class="form">
 
 <div class="field">
 <label>Họ và tên *</label>
@@ -516,7 +492,7 @@ oninput="renderRepairs()">
 
 <div class="field">
 <label>Model</label>
-<input id="bModel" placeholder="Ví dụ: iPhone 15 Pro Max">
+<input id="bModel">
 </div>
 
 <div class="field">
@@ -530,8 +506,8 @@ oninput="renderRepairs()">
 </div>
 
 <div class="field full">
-<label>Lỗi / dịch vụ cần sửa *</label>
-<textarea id="bProblem" placeholder="Ví dụ: bể kính, thay pin, mất nguồn..."></textarea>
+<label>Lỗi cần sửa *</label>
+<textarea id="bProblem"></textarea>
 </div>
 
 <div class="field full">
@@ -543,9 +519,11 @@ oninput="renderRepairs()">
 
 <button
 class="btn primary"
-style="width:100%;margin-top:8px"
-onclick="submitBooking()">
+style="width:100%;margin-top:12px"
+onclick="booking()">
+
 📅 GỬI ĐẶT LỊCH
+
 </button>
 
 </div>
@@ -566,7 +544,7 @@ iPhone và phụ kiện.
 </p>
 
 <p>
-📍 <b>Địa chỉ cửa hàng:</b><br>
+📍 <b>Địa chỉ:</b><br>
 Ấp 4, xã Tân Phước 3,
 tỉnh Đồng Tháp
 </p>
@@ -586,11 +564,11 @@ tỉnh Đồng Tháp
 </p>
 
 <a
-class="btn primary map-button"
+class="btn primary"
 href="https://maps.google.com/?q=10.4579284,106.2978775"
 target="_blank">
 
-📍 CHỈ ĐƯỜNG ĐẾN CỬA HÀNG
+📍 CHỈ ĐƯỜNG GOOGLE MAPS
 
 </a>
 
@@ -601,155 +579,85 @@ target="_blank">
 <p>Phụ kiện</p>
 <p>iPhone</p>
 <p>Sửa chữa</p>
-<p>Đặt lịch</p>
 </div>
 
 <div>
-<h3>Hỗ trợ</h3>
-<p>Liên hệ</p>
-<p>Bảo hành</p>
-<p>Chính sách sửa chữa</p>
+<h3>Liên hệ</h3>
+<p>Hotline: 0786 833 253</p>
+<p>Zalo: 0786 833 253</p>
 </div>
 
 </div>
 
-<p style="text-align:center;margin-top:30px">
+<p style="text-align:center">
 © 2026 PD TechCare
 </p>
 
 </footer>
 
-
-<div class="float">
-
-<a class="hotline" href="tel:0786833253">
-☎️ HOTLINE
-</a>
-
-<a class="zalo"
-href="https://zalo.me/0786833253"
-target="_blank">
-🟢 ZALO
-</a>
-
-</div>
-
-
-<!-- GIỎ HÀNG -->
-
-<div
-class="overlay"
-id="cartOverlay"
-onclick="if(event.target.id==='cartOverlay')closeCart()">
-
-<div class="cart-panel">
-
-<div class="panel-head">
-
-<h2>🛒 Giỏ hàng</h2>
-
-<button class="close" onclick="closeCart()">✕</button>
-
-</div>
-
-<div id="cartItems"></div>
-
-<h3>
-Tổng:
-<span id="cartTotal">0đ</span>
-</h3>
-
-<button
-class="btn primary"
-style="width:100%"
-onclick="orderCart()">
-📦 ĐẶT HÀNG QUA ZALO
-</button>
-
-</div>
-</div>
-
-
-<!-- ĐĂNG NHẬP ADMIN -->
-
-<div class="overlay" id="loginOverlay">
-
-<div class="login">
-
-<h2>🔐 PD TechCare Admin</h2>
-
-<input
-id="email"
-type="email"
-placeholder="Email Admin">
-
-<input
-id="password"
-type="password"
-placeholder="Mật khẩu">
-
-<button
-class="btn primary"
-style="width:100%"
-onclick="login()">
-ĐĂNG NHẬP
-</button>
-
-<button
-class="btn light"
-style="width:100%;margin-top:8px"
-onclick="closeLogin()">
-Hủy
-</button>
-
-</div>
 </div>
 
 
 <!-- ADMIN -->
 
-<div class="overlay" id="adminOverlay">
-
-<div class="admin-box">
+<div id="adminPage">
 
 <div class="admin-head">
 
 <div>
-<b>PD TechCare ADMIN</b>
-<small style="display:block;opacity:.7">
-Quản lý cửa hàng
-</small>
+<b>🔐 PD TECHCARE ADMIN</b>
+<br>
+<small>Quản lý cửa hàng</small>
 </div>
 
-<button class="close" onclick="logout()">
-Đăng xuất
+<button
+class="btn light"
+onclick="closeAdmin()">
+
+Thoát Admin
+
 </button>
 
 </div>
 
 
-<div class="admin-body">
+<div class="admin-content">
 
 <div class="admin-tabs">
 
-<button onclick="adminTab('productAdmin')">
+<button
+id="tab1"
+class="active"
+onclick="adminTab('productsAdmin','tab1')">
+
 🛒 Sản phẩm
+
 </button>
 
-<button onclick="adminTab('repairAdmin')">
+<button
+id="tab2"
+onclick="adminTab('repairAdmin','tab2')">
+
 🔧 Giá sửa
+
 </button>
 
-<button onclick="adminTab('bookingAdmin')">
+<button
+id="tab3"
+onclick="adminTab('bookingAdmin','tab3')">
+
 📅 Lịch hẹn
+
 </button>
 
 </div>
 
 
-<!-- SẢN PHẨM -->
+<!-- PRODUCTS ADMIN -->
 
-<div class="admin-tab active" id="productAdmin">
+<div
+id="productsAdmin"
+class="admin-tab active">
 
 <div class="admin-card">
 
@@ -759,12 +667,12 @@ Quản lý cửa hàng
 
 <div>
 <label>Tên sản phẩm</label>
-<input id="newName" placeholder="Củ sạc nhanh 20W">
+<input id="newName">
 </div>
 
 <div>
 <label>Giá</label>
-<input id="newPrice" type="number" placeholder="150000">
+<input id="newPrice" type="number">
 </div>
 
 <div>
@@ -783,18 +691,22 @@ Quản lý cửa hàng
 </div>
 
 <div>
-<label>Emoji</label>
+<label>Biểu tượng</label>
 <input id="newIcon" value="📱">
 </div>
 
 <div style="grid-column:1/-1">
+
 <label>Link hình ảnh</label>
 <input id="newImage" placeholder="https://...">
+
 </div>
 
 <div style="grid-column:1/-1">
+
 <label>Mô tả</label>
 <textarea id="newDesc"></textarea>
+
 </div>
 
 </div>
@@ -803,7 +715,9 @@ Quản lý cửa hàng
 class="btn primary"
 style="margin-top:10px"
 onclick="addProduct()">
+
 ➕ THÊM SẢN PHẨM
+
 </button>
 
 </div>
@@ -813,29 +727,31 @@ onclick="addProduct()">
 </div>
 
 
-<!-- GIÁ SỬA -->
+<!-- REPAIR ADMIN -->
 
-<div class="admin-tab" id="repairAdmin">
+<div
+id="repairAdmin"
+class="admin-tab">
 
 <div class="admin-card">
 
-<h3>➕ Thêm dịch vụ</h3>
+<h3>➕ Thêm giá sửa chữa</h3>
 
 <div class="admin-grid">
 
 <div>
 <label>Model / hãng</label>
-<input id="newModel" placeholder="iPhone 15 Pro Max">
+<input id="newModel">
 </div>
 
 <div>
 <label>Dịch vụ</label>
-<input id="newService" placeholder="Thay pin">
+<input id="newService">
 </div>
 
 <div>
 <label>Giá</label>
-<input id="newRepairPrice" placeholder="Liên hệ">
+<input id="newRepairPrice">
 </div>
 
 </div>
@@ -844,7 +760,9 @@ onclick="addProduct()">
 class="btn primary"
 style="margin-top:10px"
 onclick="addRepair()">
+
 ➕ THÊM DỊCH VỤ
+
 </button>
 
 </div>
@@ -854,16 +772,121 @@ onclick="addRepair()">
 </div>
 
 
-<!-- LỊCH HẸN -->
+<!-- BOOKING ADMIN -->
 
-<div class="admin-tab" id="bookingAdmin">
+<div
+id="bookingAdmin"
+class="admin-tab">
 
 <div id="adminBookings"></div>
 
 </div>
 
 </div>
+
 </div>
+
+
+<!-- LOGIN -->
+
+<div class="loginbox" id="loginBox">
+
+<div class="login">
+
+<h2>🔐 Admin PD TechCare</h2>
+
+<input
+id="email"
+type="email"
+placeholder="Email Admin">
+
+<input
+id="password"
+type="password"
+placeholder="Mật khẩu">
+
+<button
+class="btn primary"
+style="width:100%"
+onclick="login()">
+
+ĐĂNG NHẬP
+
+</button>
+
+<button
+class="btn light"
+style="width:100%;margin-top:8px"
+onclick="closeLogin()">
+
+Hủy
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- CART -->
+
+<div class="cartbox" id="cartBox">
+
+<div class="cart">
+
+<div style="display:flex;justify-content:space-between">
+
+<h2>🛒 Giỏ hàng</h2>
+
+<button
+class="btn light"
+onclick="closeCart()">
+
+✕
+
+</button>
+
+</div>
+
+<div id="cartItems"></div>
+
+<h3>
+Tổng: <span id="cartTotal">0đ</span>
+</h3>
+
+<button
+class="btn primary"
+style="width:100%"
+onclick="orderCart()">
+
+📦 ĐẶT HÀNG QUA ZALO
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="float">
+
+<a
+class="hot"
+href="tel:0786833253">
+
+☎️ HOTLINE
+
+</a>
+
+<a
+class="zalo"
+href="https://zalo.me/0786833253"
+target="_blank">
+
+🟢 ZALO
+
+</a>
+
 </div>
 
 
@@ -913,7 +936,6 @@ measurementId:"G-K2257YTXR8"
 
 };
 
-
 const app=initializeApp(firebaseConfig);
 const auth=getAuth(app);
 const db=getFirestore(app);
@@ -922,7 +944,7 @@ const ADMIN_UID=
 "ulNfAPkJ9ufdtHyVWsFNq2qZTVU2";
 
 
-const DEFAULT_PRODUCTS=[
+const productsDefault=[
 
 {
 name:"Củ sạc nhanh 20W",
@@ -934,30 +956,12 @@ desc:"Củ sạc nhanh 20W"
 },
 
 {
-name:"Củ sạc nhanh 33W",
-price:220000,
-category:"Củ sạc",
-icon:"🔌",
-image:"",
-desc:"Củ sạc nhanh 33W"
-},
-
-{
 name:"Cáp Type-C 1m",
 price:99000,
 category:"Cáp sạc",
 icon:"🔋",
 image:"",
-desc:"Cáp Type-C 1m"
-},
-
-{
-name:"Cáp Lightning 1m",
-price:120000,
-category:"Cáp sạc",
-icon:"🔋",
-image:"",
-desc:"Cáp Lightning"
+desc:"Cáp sạc Type-C"
 },
 
 {
@@ -975,7 +979,7 @@ price:70000,
 category:"Cường lực",
 icon:"🛡️",
 image:"",
-desc:"Cường lực bảo vệ màn hình"
+desc:"Kính cường lực"
 },
 
 {
@@ -984,7 +988,7 @@ price:80000,
 category:"Ốp lưng",
 icon:"📱",
 image:"",
-desc:"Ốp lưng bảo vệ máy"
+desc:"Ốp lưng"
 },
 
 {
@@ -1017,7 +1021,7 @@ desc:"iPhone 15 128GB"
 ];
 
 
-const DEFAULT_REPAIRS=[
+const repairDefault=[
 
 ["iPhone 11","Thay pin","Liên hệ"],
 ["iPhone 12","Thay pin","Liên hệ"],
@@ -1025,23 +1029,18 @@ const DEFAULT_REPAIRS=[
 ["iPhone 14","Thay pin","Liên hệ"],
 ["iPhone 15","Thay pin","Liên hệ"],
 ["iPhone 16","Thay pin","Liên hệ"],
-["iPhone 17","Thay pin","Liên hệ"],
 
 ["iPhone 11","Ép kính","Liên hệ"],
 ["iPhone 12","Ép kính","Liên hệ"],
 ["iPhone 13","Ép kính","Liên hệ"],
 ["iPhone 14","Ép kính","Liên hệ"],
 ["iPhone 15","Ép kính","Liên hệ"],
-["iPhone 16","Ép kính","Liên hệ"],
-["iPhone 17","Ép kính","Liên hệ"],
 
 ["iPhone 11","Thay màn hình","Liên hệ"],
 ["iPhone 12","Thay màn hình","Liên hệ"],
 ["iPhone 13","Thay màn hình","Liên hệ"],
 ["iPhone 14","Thay màn hình","Liên hệ"],
 ["iPhone 15","Thay màn hình","Liên hệ"],
-["iPhone 16","Thay màn hình","Liên hệ"],
-["iPhone 17","Thay màn hình","Liên hệ"],
 
 ["Samsung","Thay màn hình","Liên hệ"],
 ["Samsung","Thay pin","Liên hệ"],
@@ -1049,7 +1048,6 @@ const DEFAULT_REPAIRS=[
 
 ["OPPO","Thay màn hình","Liên hệ"],
 ["OPPO","Thay pin","Liên hệ"],
-["OPPO","Ép kính","Liên hệ"],
 
 ["Vivo","Thay màn hình","Liên hệ"],
 ["Vivo","Thay pin","Liên hệ"],
@@ -1057,17 +1055,13 @@ const DEFAULT_REPAIRS=[
 ["Xiaomi","Thay màn hình","Liên hệ"],
 ["Xiaomi","Thay pin","Liên hệ"],
 
-["Realme","Thay màn hình","Liên hệ"],
-["Realme","Thay pin","Liên hệ"],
-
 ["Honor","Thay màn hình","Liên hệ"],
 ["Honor","Thay pin","Liên hệ"],
 
 ["Tất cả dòng","Sửa main","Liên hệ"],
 ["Tất cả dòng","Sửa Face ID","Liên hệ"],
 ["Tất cả dòng","Sửa camera","Liên hệ"],
-["Tất cả dòng","Sửa sạc","Liên hệ"],
-["Tất cả dòng","Sửa loa / mic","Liên hệ"]
+["Tất cả dòng","Sửa sạc","Liên hệ"]
 
 ];
 
@@ -1078,129 +1072,272 @@ let bookings=[];
 let cart=[];
 
 
-const money=n=>
-Number(n||0).toLocaleString("vi-VN")+"đ";
+function $(id){
+return document.getElementById(id)
+}
 
+function money(n){
+return Number(n||0).toLocaleString("vi-VN")+"đ"
+}
 
-const esc=v=>
-String(v??"").replace(/[&<>"']/g,c=>({
+function esc(v){
+return String(v??"")
+.replace(/[&<>"']/g,c=>({
 "&":"&amp;",
 "<":"&lt;",
 ">":"&gt;",
 '"':"&quot;",
 "'":"&#039;"
-}[c]));
-
+}[c]))
+}
 
 function toast(t){
+$("toast").textContent=t;
+$("toast").classList.add("show");
+setTimeout(()=>$("toast").classList.remove("show"),2000)
+}
 
-const x=document.getElementById("toast");
 
-x.textContent=t;
-x.classList.add("show");
+window.menu=()=>{
+$("nav").classList.toggle("show")
+}
 
-setTimeout(
-()=>x.classList.remove("show"),
-2200
-);
+window.go=id=>{
+$(id).scrollIntoView({behavior:"smooth"});
+$("nav").classList.remove("show")
+}
+
+
+/* LOGIN */
+
+window.openLogin=()=>{
+$("loginBox").classList.add("show")
+}
+
+window.closeLogin=()=>{
+$("loginBox").classList.remove("show")
+}
+
+
+window.login=async()=>{
+
+try{
+
+await signInWithEmailAndPassword(
+auth,
+$("email").value.trim(),
+$("password").value
+)
+
+}catch(e){
+
+alert("Đăng nhập lỗi:\n"+e.message)
+
+}
 
 }
 
 
-window.go=id=>
-document.getElementById(id)
-.scrollIntoView({behavior:"smooth"});
+/* AUTH */
+
+onAuthStateChanged(auth,async user=>{
+
+if(user&&user.uid===ADMIN_UID){
+
+$("loginBox").classList.remove("show");
+
+$("website").style.display="none";
+
+$("adminPage").style.display="block";
+
+window.scrollTo(0,0);
+
+await seed();
+
+await loadProducts();
+
+await loadRepairs();
+
+await loadBookings();
+
+renderAdminProducts();
+
+renderAdminRepairs();
+
+renderAdminBookings();
+
+}else if(user){
+
+await signOut(auth);
+
+alert("Tài khoản này không phải Admin.");
+
+}
+
+})
 
 
-window.toggleMenu=()=>
-document.getElementById("nav")
-.classList.toggle("show");
+window.closeAdmin=async()=>{
+
+await signOut(auth);
+
+$("adminPage").style.display="none";
+
+$("website").style.display="block";
+
+window.scrollTo(0,0);
+
+}
 
 
-/* LOAD PRODUCTS */
+window.adminTab=(id,button)=>{
+
+document
+.querySelectorAll(".admin-tab")
+.forEach(x=>x.classList.remove("active"));
+
+document
+.querySelectorAll(".admin-tabs button")
+.forEach(x=>x.classList.remove("active"));
+
+$(id).classList.add("active");
+
+$(button).classList.add("active");
+
+window.scrollTo(0,0);
+
+}
+
+
+/* DATABASE */
+
+async function seed(){
+
+try{
+
+let p=await getDocs(collection(db,"products"));
+
+if(p.empty){
+
+for(const x of productsDefault){
+
+await addDoc(
+collection(db,"products"),
+{
+...x,
+createdAt:Date.now()
+}
+)
+
+}
+
+}
+
+let r=await getDocs(collection(db,"repairs"));
+
+if(r.empty){
+
+for(const x of repairDefault){
+
+await addDoc(
+collection(db,"repairs"),
+{
+model:x[0],
+service:x[1],
+price:x[2],
+createdAt:Date.now()
+}
+)
+
+}
+
+}
+
+}catch(e){
+
+console.log(e)
+
+}
+
+}
+
 
 async function loadProducts(){
 
 try{
 
-const s=
-await getDocs(collection(db,"products"));
+let s=await getDocs(
+collection(db,"products")
+);
 
 if(s.empty){
 
-products=
-DEFAULT_PRODUCTS.map(
-(p,i)=>({id:"default-"+i,...p})
-);
+products=productsDefault.map(
+(x,i)=>({id:"default"+i,...x})
+)
 
 }else{
 
-products=
-s.docs.map(
+products=s.docs.map(
 d=>({id:d.id,...d.data()})
-);
+)
 
 }
 
 }catch(e){
 
-products=
-DEFAULT_PRODUCTS.map(
-(p,i)=>({id:"default-"+i,...p})
-);
+products=productsDefault.map(
+(x,i)=>({id:"default"+i,...x})
+)
 
 }
 
-renderProducts();
+renderProducts()
 
 }
 
-
-/* LOAD REPAIR */
 
 async function loadRepairs(){
 
 try{
 
-const s=
-await getDocs(collection(db,"repairs"));
+let s=await getDocs(
+collection(db,"repairs")
+);
 
 if(s.empty){
 
-repairs=
-DEFAULT_REPAIRS.map(
-(r,i)=>({
-id:"default-"+i,
-model:r[0],
-service:r[1],
-price:r[2]
+repairs=repairDefault.map(
+(x,i)=>({
+id:"default"+i,
+model:x[0],
+service:x[1],
+price:x[2]
 })
-);
+)
 
 }else{
 
-repairs=
-s.docs.map(
+repairs=s.docs.map(
 d=>({id:d.id,...d.data()})
-);
+)
 
 }
 
 }catch(e){
 
-repairs=
-DEFAULT_REPAIRS.map(
-(r,i)=>({
-id:"default-"+i,
-model:r[0],
-service:r[1],
-price:r[2]
+repairs=repairDefault.map(
+(x,i)=>({
+id:"default"+i,
+model:x[0],
+service:x[1],
+price:x[2]
 })
-);
+)
 
 }
 
-renderRepairs();
+renderRepairs()
 
 }
 
@@ -1209,29 +1346,27 @@ renderRepairs();
 
 window.renderProducts=()=>{
 
-const q=
-(document.getElementById("productSearch").value||"")
+let q=
+($("productSearch").value||"")
 .toLowerCase();
 
-const list=
-products.filter(
+let list=products.filter(
 p=>
 (
-String(p.name||"")+
-" "+
-String(p.category||"")
+(p.name||"")+" "+
+(p.category||"")
 )
 .toLowerCase()
 .includes(q)
 );
 
-document.getElementById("products").innerHTML=
+$("products").innerHTML=
 
 list.map(p=>`
 
 <div class="product">
 
-<div class="product-image">
+<div class="pimg">
 
 ${
 p.image
@@ -1243,32 +1378,38 @@ esc(p.icon||"📱")
 
 </div>
 
-<div class="product-body">
+<div class="pbody">
 
-<div class="product-name">
+<div class="pname">
 ${esc(p.name)}
 </div>
 
-<div class="product-price">
+<div class="price">
 ${money(p.price)}
 </div>
 
-<div class="product-actions">
+<div class="actions">
 
 <button
 class="btn light"
-onclick="showProduct('${p.id}')">
+onclick="detail('${p.id}')">
+
 Chi tiết
+
 </button>
 
 <button
 class="btn primary"
 onclick="addCart('${p.id}')">
+
 🛒 Thêm
+
 </button>
 
 </div>
+
 </div>
+
 </div>
 
 `).join("")
@@ -1276,59 +1417,58 @@ onclick="addCart('${p.id}')">
 ||
 
 `<div class="empty" style="grid-column:1/-1">
-Không tìm thấy sản phẩm.
-</div>`;
+Không có sản phẩm.
+</div>`
 
-};
+}
 
 
-window.showProduct=id=>{
+window.detail=id=>{
 
-const p=products.find(x=>x.id===id);
+let p=products.find(x=>x.id===id);
 
-if(!p)return;
-
+if(p)
 alert(
 p.name+
 "\n\nGiá: "+
 money(p.price)+
 "\n\n"+
 (p.desc||"")
-);
+)
 
-};
+}
 
 
-window.filterShop=c=>{
+window.filterShop=x=>{
 
-document.getElementById("productSearch").value=c;
+$("productSearch").value=x;
 
 go("shop");
 
-renderProducts();
+renderProducts()
 
-};
+}
 
 
 /* CART */
 
 window.addCart=id=>{
 
-const x=cart.find(a=>a.id===id);
+let x=cart.find(a=>a.id===id);
 
 if(x)x.qty++;
-else cart.push({id,qty:1});
+else cart.push({id:id,qty:1});
 
 renderCart();
 
-toast("🛒 Đã thêm vào giỏ");
+toast("Đã thêm vào giỏ")
 
-};
+}
 
 
 window.changeQty=(id,n)=>{
 
-const x=cart.find(a=>a.id===id);
+let x=cart.find(a=>a.id===id);
 
 if(!x)return;
 
@@ -1337,108 +1477,111 @@ x.qty+=n;
 if(x.qty<=0)
 cart=cart.filter(a=>a.id!==id);
 
-renderCart();
+renderCart()
 
-};
+}
 
 
 window.removeCart=id=>{
 
 cart=cart.filter(a=>a.id!==id);
 
-renderCart();
+renderCart()
 
-};
+}
 
 
 function renderCart(){
 
-let count=0;
 let total=0;
+let count=0;
 
-document.getElementById("cartItems").innerHTML=
+$("cartItems").innerHTML=
 
 cart.map(x=>{
 
-const p=products.find(a=>a.id===x.id);
+let p=products.find(a=>a.id===x.id);
 
 if(!p)return"";
 
 count+=x.qty;
+
 total+=p.price*x.qty;
 
 return`
 
-<div class="cart-item">
+<div style="padding:14px 0;border-bottom:1px solid #eee">
 
 <b>${esc(p.name)}</b>
 
-<p>${money(p.price)} × ${x.qty}</p>
+<br>
 
-<button
-class="close"
+${money(p.price)} × ${x.qty}
+
+<br><br>
+
+<button class="btn light"
 onclick="changeQty('${p.id}',-1)">
 −
 </button>
 
 ${x.qty}
 
-<button
-class="close"
+<button class="btn light"
 onclick="changeQty('${p.id}',1)">
 +
 </button>
 
-<button
-class="close"
+<button class="btn light"
 onclick="removeCart('${p.id}')">
 Xóa
 </button>
 
 </div>
 
-`;
+`
 
 }).join("")
 
 ||
 
-`<div class="empty">🛒<br><br>Giỏ hàng trống</div>`;
+`<div class="empty">🛒 Giỏ hàng trống</div>`;
 
-document.getElementById("cartCount").textContent=count;
-document.getElementById("cartTotal").textContent=money(total);
+$("cartCount").textContent=count;
+$("cartTotal").textContent=money(total)
 
 }
 
 
 window.openCart=()=>{
-renderCart();
-document.getElementById("cartOverlay").classList.add("show");
-};
-
+$("cartBox").classList.add("show");
+renderCart()
+}
 
 window.closeCart=()=>{
-document.getElementById("cartOverlay").classList.remove("show");
-};
+$("cartBox").classList.remove("show")
+}
 
 
 window.orderCart=()=>{
 
 if(!cart.length){
+
 toast("Giỏ hàng trống");
-return;
+
+return
+
 }
 
 let text="PD TECHCARE - ĐẶT HÀNG\n\n";
+
 let total=0;
 
 cart.forEach(x=>{
 
-const p=products.find(a=>a.id===x.id);
+let p=products.find(a=>a.id===x.id);
 
-if(!p)return;
-
-const sum=p.price*x.qty;
+let sum=p.price*x.qty;
 
 total+=sum;
 
@@ -1448,43 +1591,41 @@ p.name+
 x.qty+
 " - "+
 money(sum)+
-"\n";
+"\n"
 
-});
+})
 
 text+=
 "\nTỔNG: "+
 money(total)+
-"\n\nTên khách:\nSố điện thoại:";
+"\nTên khách:\nSố điện thoại:";
 
 navigator.clipboard?.writeText(text).catch(()=>{});
 
 window.open(
 "https://zalo.me/0786833253",
 "_blank"
-);
+)
 
-};
+}
 
 
 /* REPAIR */
 
 window.renderRepairs=()=>{
 
-const q=
-(document.getElementById("repairSearch").value||"")
+let q=
+($("repairSearch").value||"")
 .toLowerCase();
 
-document.getElementById("repairTable").innerHTML=
+$("repairTable").innerHTML=
 
 repairs
 .filter(
 r=>
 (
-r.model+
-" "+
-r.service+
-" "+
+r.model+" "+
+r.service+" "+
 r.price
 )
 .toLowerCase()
@@ -1498,38 +1639,38 @@ r.price
 
 <td>${esc(r.service)}</td>
 
-<td style="color:#0798d8;font-weight:900">
+<td style="color:#0798d8;font-weight:bold">
 ${esc(r.price)}
 </td>
 
 </tr>
 
-`).join("");
+`).join("")
 
-};
+}
 
 
 /* BOOKING */
 
-window.submitBooking=async()=>{
+window.booking=async()=>{
 
-const b={
+let b={
 
-name:document.getElementById("bName").value.trim(),
+name:$("bName").value.trim(),
 
-phone:document.getElementById("bPhone").value.trim(),
+phone:$("bPhone").value.trim(),
 
-brand:document.getElementById("bBrand").value,
+brand:$("bBrand").value,
 
-model:document.getElementById("bModel").value.trim(),
+model:$("bModel").value.trim(),
 
-date:document.getElementById("bDate").value,
+date:$("bDate").value,
 
-time:document.getElementById("bTime").value,
+time:$("bTime").value,
 
-problem:document.getElementById("bProblem").value.trim(),
+problem:$("bProblem").value.trim(),
 
-note:document.getElementById("bNote").value.trim(),
+note:$("bNote").value.trim(),
 
 status:"Chờ xác nhận",
 
@@ -1537,33 +1678,46 @@ createdAt:Date.now()
 
 };
 
-if(!b.name||!b.phone||!b.date||!b.problem){
+if(
+!b.name||
+!b.phone||
+!b.date||
+!b.problem
+){
 
-alert(
-"Vui lòng nhập Họ tên, Số điện thoại, Ngày và lỗi cần sửa."
-);
+alert("Vui lòng nhập đầy đủ thông tin.");
 
-return;
+return
+
 }
 
 try{
 
-await addDoc(collection(db,"bookings"),b);
+await addDoc(
+collection(db,"bookings"),
+b
+);
 
-const text=
+alert("✅ Đặt lịch thành công!");
+
+let text=
 `PD TECHCARE - ĐẶT LỊCH
 
 Khách: ${b.name}
+
 SĐT: ${b.phone}
+
 Máy: ${b.brand} ${b.model}
+
 Ngày: ${b.date}
+
 Giờ: ${b.time||"Chưa chọn"}
+
 Lỗi: ${b.problem}
+
 Ghi chú: ${b.note||"Không có"}`;
 
 navigator.clipboard?.writeText(text).catch(()=>{});
-
-alert("✅ Đặt lịch thành công!");
 
 window.open(
 "https://zalo.me/0786833253",
@@ -1571,168 +1725,27 @@ window.open(
 );
 
 ["bName","bPhone","bModel","bProblem","bNote"]
-.forEach(id=>document.getElementById(id).value="");
+.forEach(id=>$(id).value="");
 
 }catch(e){
 
-alert("Không gửi được:\n\n"+e.message);
-
-}
-
-};
-
-
-/* LOGIN */
-
-window.openLogin=()=>{
-document.getElementById("loginOverlay").classList.add("show");
-};
-
-window.closeLogin=()=>{
-document.getElementById("loginOverlay").classList.remove("show");
-};
-
-window.login=async()=>{
-
-try{
-
-await signInWithEmailAndPassword(
-auth,
-document.getElementById("email").value.trim(),
-document.getElementById("password").value
-);
-
-}catch(e){
-
-alert("Đăng nhập thất bại:\n\n"+e.message);
-
-}
-
-};
-
-
-/* ADMIN */
-
-window.adminTab=id=>{
-
-document
-.querySelectorAll(".admin-tab")
-.forEach(x=>x.classList.remove("active"));
-
-document.getElementById(id).classList.add("active");
-
-};
-
-
-window.logout=async()=>{
-
-await signOut(auth);
-
-document.getElementById("adminOverlay")
-.classList.remove("show");
-
-};
-
-
-/* SEED */
-
-async function seedDatabase(){
-
-try{
-
-const p=
-await getDocs(collection(db,"products"));
-
-if(p.empty){
-
-for(const x of DEFAULT_PRODUCTS){
-
-await addDoc(
-collection(db,"products"),
-{
-...x,
-createdAt:Date.now()
-}
-);
-
-}
-
-}
-
-const r=
-await getDocs(collection(db,"repairs"));
-
-if(r.empty){
-
-for(const x of DEFAULT_REPAIRS){
-
-await addDoc(
-collection(db,"repairs"),
-{
-model:x[0],
-service:x[1],
-price:x[2],
-createdAt:Date.now()
-}
-);
-
-}
-
-}
-
-}catch(e){
-
-console.log(e);
+alert(e.message)
 
 }
 
 }
 
 
-/* AUTH */
-
-onAuthStateChanged(auth,async user=>{
-
-if(user&&user.uid===ADMIN_UID){
-
-document.getElementById("loginOverlay")
-.classList.remove("show");
-
-document.getElementById("adminOverlay")
-.classList.add("show");
-
-await seedDatabase();
-
-await loadProducts();
-await loadRepairs();
-await loadBookings();
-
-renderAdminProducts();
-renderAdminRepairs();
-
-}else if(user){
-
-await signOut(auth);
-
-alert(
-"Tài khoản này không phải Admin PD TechCare."
-);
-
-}
-
-});
-
-
-/* ADMIN PRODUCTS */
+/* ADMIN PRODUCT */
 
 function renderAdminProducts(){
 
-const list=
+let list=
 products.filter(
-p=>!String(p.id).startsWith("default-")
+p=>!p.id.startsWith("default")
 );
 
-document.getElementById("adminProducts").innerHTML=
+$("adminProducts").innerHTML=
 
 list.map(p=>`
 
@@ -1741,33 +1754,64 @@ list.map(p=>`
 <div class="admin-grid">
 
 <div>
+
 <label>Tên</label>
-<input id="pn${p.id}" value="${esc(p.name)}">
+
+<input
+id="pn${p.id}"
+value="${esc(p.name)}">
+
 </div>
 
 <div>
+
 <label>Giá</label>
-<input id="pp${p.id}" type="number" value="${p.price}">
+
+<input
+id="pp${p.id}"
+type="number"
+value="${p.price}">
+
 </div>
 
 <div>
+
 <label>Danh mục</label>
-<input id="pc${p.id}" value="${esc(p.category)}">
+
+<input
+id="pc${p.id}"
+value="${esc(p.category)}">
+
 </div>
 
 <div>
-<label>Emoji</label>
-<input id="pi${p.id}" value="${esc(p.icon||"📱")}">
+
+<label>Biểu tượng</label>
+
+<input
+id="pi${p.id}"
+value="${esc(p.icon||"📱")}">
+
 </div>
 
 <div style="grid-column:1/-1">
+
 <label>Link hình ảnh</label>
-<input id="pimg${p.id}" value="${esc(p.image||"")}">
+
+<input
+id="px${p.id}"
+value="${esc(p.image||"")}">
+
 </div>
 
 <div style="grid-column:1/-1">
+
 <label>Mô tả</label>
-<textarea id="pd${p.id}">${esc(p.desc||"")}</textarea>
+
+<textarea id="pd${p.id}">
+${esc(p.desc||"")}
+</textarea>
+
 </div>
 
 </div>
@@ -1777,13 +1821,17 @@ list.map(p=>`
 <button
 class="btn primary"
 onclick="saveProduct('${p.id}')">
+
 💾 Lưu
+
 </button>
 
 <button
 class="btn light"
 onclick="deleteProduct('${p.id}')">
+
 🗑️ Xóa
+
 </button>
 
 </div>
@@ -1793,30 +1841,29 @@ onclick="deleteProduct('${p.id}')">
 `).join("")
 
 ||
+
 `<div class="empty">
-Chưa có sản phẩm trên Firestore.
-</div>`;
+Chưa có sản phẩm.
+</div>`
 
 }
 
 
 window.addProduct=async()=>{
 
-const d={
+let d={
 
-name:document.getElementById("newName").value.trim(),
+name:$("newName").value.trim(),
 
-price:Number(
-document.getElementById("newPrice").value
-),
+price:Number($("newPrice").value),
 
-category:document.getElementById("newCategory").value,
+category:$("newCategory").value,
 
-icon:document.getElementById("newIcon").value||"📱",
+icon:$("newIcon").value||"📱",
 
-image:document.getElementById("newImage").value.trim(),
+image:$("newImage").value.trim(),
 
-desc:document.getElementById("newDesc").value.trim(),
+desc:$("newDesc").value.trim(),
 
 createdAt:Date.now()
 
@@ -1824,52 +1871,57 @@ createdAt:Date.now()
 
 if(!d.name||!d.price){
 
-alert("Nhập tên sản phẩm và giá.");
-return;
+alert("Nhập tên và giá.");
+
+return
 
 }
 
 try{
 
-const r=
-await addDoc(collection(db,"products"),d);
+let r=
+await addDoc(
+collection(db,"products"),
+d
+);
 
-products.push({id:r.id,...d});
+products.push({
+id:r.id,
+...d
+});
 
 renderProducts();
 renderAdminProducts();
 
 ["newName","newPrice","newImage","newDesc"]
-.forEach(id=>document.getElementById(id).value="");
+.forEach(id=>$(id).value="");
 
-toast("Đã thêm sản phẩm");
+toast("Đã thêm sản phẩm")
 
 }catch(e){
 
-alert(e.message);
+alert(e.message)
 
 }
 
-};
+}
 
 
 window.saveProduct=async id=>{
 
-const d={
+let d={
 
-name:document.getElementById("pn"+id).value,
+name:$("pn"+id).value,
 
-price:Number(
-document.getElementById("pp"+id).value
-),
+price:Number($("pp"+id).value),
 
-category:document.getElementById("pc"+id).value,
+category:$("pc"+id).value,
 
-icon:document.getElementById("pi"+id).value,
+icon:$("pi"+id).value,
 
-image:document.getElementById("pimg"+id).value,
+image:$("px"+id).value,
 
-desc:document.getElementById("pd"+id).value
+desc:$("pd"+id).value
 
 };
 
@@ -1888,52 +1940,53 @@ d
 
 renderProducts();
 
-toast("Đã lưu sản phẩm");
+toast("Đã lưu sản phẩm")
 
 }catch(e){
 
-alert(e.message);
+alert(e.message)
 
 }
 
-};
+}
 
 
 window.deleteProduct=async id=>{
 
-if(!confirm("Bạn chắc chắn muốn xóa sản phẩm?"))
+if(!confirm("Xóa sản phẩm?"))
 return;
 
 try{
 
-await deleteDoc(doc(db,"products",id));
+await deleteDoc(
+doc(db,"products",id)
+);
 
-products=products.filter(p=>p.id!==id);
+products=
+products.filter(p=>p.id!==id);
 
 renderProducts();
 renderAdminProducts();
 
-toast("Đã xóa sản phẩm");
-
 }catch(e){
 
-alert(e.message);
+alert(e.message)
 
 }
 
-};
+}
 
 
 /* ADMIN REPAIR */
 
 function renderAdminRepairs(){
 
-const list=
+let list=
 repairs.filter(
-r=>!String(r.id).startsWith("default-")
+r=>!r.id.startsWith("default")
 );
 
-document.getElementById("adminRepairs").innerHTML=
+$("adminRepairs").innerHTML=
 
 list.map(r=>`
 
@@ -1942,18 +1995,33 @@ list.map(r=>`
 <div class="admin-grid">
 
 <div>
+
 <label>Model</label>
-<input id="rm${r.id}" value="${esc(r.model)}">
+
+<input
+id="rm${r.id}"
+value="${esc(r.model)}">
+
 </div>
 
 <div>
+
 <label>Dịch vụ</label>
-<input id="rs${r.id}" value="${esc(r.service)}">
+
+<input
+id="rs${r.id}"
+value="${esc(r.service)}">
+
 </div>
 
 <div>
+
 <label>Giá</label>
-<input id="rr${r.id}" value="${esc(r.price)}">
+
+<input
+id="rr${r.id}"
+value="${esc(r.price)}">
+
 </div>
 
 </div>
@@ -1963,13 +2031,17 @@ list.map(r=>`
 <button
 class="btn primary"
 onclick="saveRepair('${r.id}')">
+
 💾 Lưu
+
 </button>
 
 <button
 class="btn light"
 onclick="deleteRepair('${r.id}')">
+
 🗑️ Xóa
+
 </button>
 
 </div>
@@ -1979,67 +2051,79 @@ onclick="deleteRepair('${r.id}')">
 `).join("")
 
 ||
+
 `<div class="empty">
-Chưa có dịch vụ trên Firestore.
-</div>`;
+Chưa có dịch vụ.
+</div>`
 
 }
 
 
 window.addRepair=async()=>{
 
-const d={
+let d={
 
-model:document.getElementById("newModel").value.trim(),
+model:$("newModel").value.trim(),
 
-service:document.getElementById("newService").value.trim(),
+service:$("newService").value.trim(),
 
-price:document.getElementById("newRepairPrice").value.trim(),
+price:$("newRepairPrice").value.trim(),
 
 createdAt:Date.now()
 
 };
 
-if(!d.model||!d.service||!d.price){
+if(
+!d.model||
+!d.service||
+!d.price
+){
 
-alert("Nhập đầy đủ thông tin.");
-return;
+alert("Nhập đầy đủ.");
+
+return
 
 }
 
 try{
 
-const r=
-await addDoc(collection(db,"repairs"),d);
+let r=
+await addDoc(
+collection(db,"repairs"),
+d
+);
 
-repairs.push({id:r.id,...d});
+repairs.push({
+id:r.id,
+...d
+});
 
 renderRepairs();
 renderAdminRepairs();
 
 ["newModel","newService","newRepairPrice"]
-.forEach(id=>document.getElementById(id).value="");
+.forEach(id=>$(id).value="");
 
-toast("Đã thêm dịch vụ");
+toast("Đã thêm dịch vụ")
 
 }catch(e){
 
-alert(e.message);
+alert(e.message)
 
 }
 
-};
+}
 
 
 window.saveRepair=async id=>{
 
-const d={
+let d={
 
-model:document.getElementById("rm"+id).value,
+model:$("rm"+id).value,
 
-service:document.getElementById("rs"+id).value,
+service:$("rs"+id).value,
 
-price:document.getElementById("rr"+id).value
+price:$("rr"+id).value
 
 };
 
@@ -2058,25 +2142,27 @@ d
 
 renderRepairs();
 
-toast("Đã lưu giá");
+toast("Đã lưu giá")
 
 }catch(e){
 
-alert(e.message);
+alert(e.message)
 
 }
 
-};
+}
 
 
 window.deleteRepair=async id=>{
 
-if(!confirm("Xóa dịch vụ này?"))
+if(!confirm("Xóa dịch vụ?"))
 return;
 
 try{
 
-await deleteDoc(doc(db,"repairs",id));
+await deleteDoc(
+doc(db,"repairs",id)
+);
 
 repairs=
 repairs.filter(r=>r.id!==id);
@@ -2084,25 +2170,25 @@ repairs.filter(r=>r.id!==id);
 renderRepairs();
 renderAdminRepairs();
 
-toast("Đã xóa dịch vụ");
-
 }catch(e){
 
-alert(e.message);
+alert(e.message)
 
 }
 
-};
+}
 
 
-/* BOOKINGS */
+/* BOOKINGS ADMIN */
 
 async function loadBookings(){
 
 try{
 
-const s=
-await getDocs(collection(db,"bookings"));
+let s=
+await getDocs(
+collection(db,"bookings")
+);
 
 bookings=
 s.docs.map(
@@ -2111,29 +2197,30 @@ d=>({id:d.id,...d.data()})
 
 bookings.sort(
 (a,b)=>
-(b.createdAt||0)-(a.createdAt||0)
+(b.createdAt||0)-
+(a.createdAt||0)
 );
-
-renderBookings();
 
 }catch(e){
 
-console.log(e);
+bookings=[]
 
 }
 
 }
 
 
-function renderBookings(){
+function renderAdminBookings(){
 
-document.getElementById("adminBookings").innerHTML=
+$("adminBookings").innerHTML=
 
 bookings.map(b=>`
 
 <div class="admin-card">
 
-<h3>${esc(b.name)}</h3>
+<h3>
+${esc(b.name)}
+</h3>
 
 <p>
 
@@ -2141,7 +2228,10 @@ bookings.map(b=>`
 
 <br>
 
-📱 ${esc((b.brand||"")+" "+(b.model||""))}
+📱 ${esc(
+(b.brand||"")+" "+
+(b.model||"")
+)}
 
 <br>
 
@@ -2160,7 +2250,7 @@ ${esc(b.time||"")}
 
 <label>Trạng thái</label>
 
-<select id="status${b.id}">
+<select id="bs${b.id}">
 
 <option ${b.status==="Chờ xác nhận"?"selected":""}>
 Chờ xác nhận
@@ -2189,13 +2279,17 @@ Hoàn thành
 <button
 class="btn primary"
 onclick="saveBooking('${b.id}')">
-💾 Lưu trạng thái
+
+💾 Lưu
+
 </button>
 
 <button
 class="btn light"
 onclick="deleteBooking('${b.id}')">
+
 🗑️ Xóa
+
 </button>
 
 </div>
@@ -2205,17 +2299,18 @@ onclick="deleteBooking('${b.id}')">
 `).join("")
 
 ||
+
 `<div class="empty">
 Chưa có lịch hẹn.
-</div>`;
+</div>`
 
 }
 
 
 window.saveBooking=async id=>{
 
-const status=
-document.getElementById("status"+id).value;
+let status=
+$("bs"+id).value;
 
 try{
 
@@ -2225,19 +2320,20 @@ doc(db,"bookings",id),
 {merge:true}
 );
 
-const b=bookings.find(x=>x.id===id);
+let b=
+bookings.find(x=>x.id===id);
 
 if(b)b.status=status;
 
-toast("Đã cập nhật trạng thái");
+toast("Đã cập nhật")
 
 }catch(e){
 
-alert(e.message);
+alert(e.message)
 
 }
 
-};
+}
 
 
 window.deleteBooking=async id=>{
@@ -2247,33 +2343,37 @@ return;
 
 try{
 
-await deleteDoc(doc(db,"bookings",id));
+await deleteDoc(
+doc(db,"bookings",id)
+);
 
 bookings=
-bookings.filter(b=>b.id!==id);
+bookings.filter(x=>x.id!==id);
 
-renderBookings();
+renderAdminBookings();
 
 }catch(e){
 
-alert(e.message);
+alert(e.message)
 
 }
 
-};
+}
+
+
+/* DATE */
+
+$("bDate").min=
+new Date().toISOString().slice(0,10);
+
+$("bDate").value=
+$("bDate").min;
 
 
 /* START */
 
-document.getElementById("bDate").min=
-new Date().toISOString().slice(0,10);
-
-document.getElementById("bDate").value=
-document.getElementById("bDate").min;
-
 loadProducts();
 loadRepairs();
-renderCart();
 
 </script>
 
