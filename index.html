@@ -9,288 +9,136 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-  background:#f5fbff;color:#17212b
-}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#f5fbff;color:#17212b}
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
 a{text-decoration:none;color:inherit}
 
-header{
-  position:sticky;top:0;z-index:1000;background:white;
-  box-shadow:0 2px 15px #159bd71c
-}
-.header{
-  max-width:1200px;margin:auto;min-height:68px;padding:10px 18px;
-  display:flex;align-items:center;justify-content:space-between
-}
+header{position:sticky;top:0;z-index:1000;background:#fff;box-shadow:0 2px 15px #159bd71c}
+.header{max-width:1200px;margin:auto;min-height:68px;padding:10px 18px;display:flex;align-items:center;justify-content:space-between}
 .logo{font-size:24px;font-weight:900;color:#159bd7}
 .logo span{color:#10212b}
-
 .nav{display:flex;gap:5px;align-items:center}
-.nav button{
-  border:0;background:white;padding:10px 12px;border-radius:10px;
-  font-weight:700;color:#40515e
-}
+.nav button{border:0;background:#fff;padding:10px 12px;border-radius:10px;font-weight:700;color:#40515e}
 .nav button:hover{background:#eaf8ff;color:#159bd7}
-.admin-btn{background:#10212b!important;color:white!important}
-.cart-btn{background:#159bd7!important;color:white!important}
+.admin-btn{background:#10212b!important;color:#fff!important}
+.cart-btn{background:#159bd7!important;color:#fff!important}
+.menu{display:none;border:0;background:#eaf8ff;color:#159bd7;padding:8px 11px;border-radius:10px;font-size:22px}
 
-.menu{
-  display:none;border:0;background:#eaf8ff;color:#159bd7;
-  padding:8px 11px;border-radius:10px;font-size:22px
-}
-
-.hero{
-  padding:70px 18px;
-  background:
-  radial-gradient(circle at 85% 20%,#7adfff55,transparent 30%),
-  linear-gradient(135deg,#eafaff,#fff)
-}
-.hero-inner{
-  max-width:1200px;margin:auto;display:grid;
-  grid-template-columns:1.1fr .9fr;gap:40px;align-items:center
-}
-.hero h1{
-  font-size:clamp(38px,6vw,64px);line-height:1.04;margin:12px 0 18px
-}
+.hero{padding:70px 18px;background:radial-gradient(circle at 85% 20%,#7adfff55,transparent 30%),linear-gradient(135deg,#eafaff,#fff)}
+.hero-inner{max-width:1200px;margin:auto;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(38px,6vw,64px);line-height:1.04;margin:12px 0 18px}
 .hero h1 span{color:#159bd7}
 .hero p{font-size:18px;color:#647582;line-height:1.7;margin-bottom:25px}
-
-.btn{
-  border:0;border-radius:12px;padding:13px 18px;font-weight:800
-}
-.primary{
-  background:#159bd7;color:#fff;box-shadow:0 8px 20px #159bd733
-}
-.light{background:white;color:#159bd7;border:1px solid #dceff7}
-
+.btn{border:0;border-radius:12px;padding:13px 18px;font-weight:800}
+.primary{background:#159bd7;color:#fff;box-shadow:0 8px 20px #159bd733}
+.light{background:#fff;color:#159bd7;border:1px solid #dceff7}
 .hero-buttons{display:flex;gap:10px;flex-wrap:wrap}
-
-.hero-card{
-  background:#fff;padding:30px;border-radius:28px;
-  box-shadow:0 20px 50px #159bd71c;text-align:center
-}
-.phone{
-  width:150px;height:280px;margin:0 auto 20px;border-radius:28px;
-  background:linear-gradient(145deg,#15232c,#587687);
-  border:6px solid #0d161b;color:#fff;
-  display:flex;align-items:center;justify-content:center;
-  font-weight:900;box-shadow:0 20px 35px #0003
-}
+.hero-card{background:#fff;padding:30px;border-radius:28px;box-shadow:0 20px 50px #159bd71c;text-align:center}
+.phone{width:150px;height:280px;margin:0 auto 20px;border-radius:28px;background:linear-gradient(145deg,#15232c,#587687);border:6px solid #0d161b;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;box-shadow:0 20px 35px #0003}
 
 .container{max-width:1200px;margin:auto;padding:55px 18px}
 .title{text-align:center;margin-bottom:30px}
 .title h2{font-size:32px;margin-bottom:8px}
 .title p{color:#71818d}
 
-.grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:16px
-}
-.category{
-  background:#fff;border:1px solid #e1f1f7;border-radius:18px;
-  padding:23px 12px;text-align:center;transition:.2s
-}
-.category:hover{
-  transform:translateY(-4px);box-shadow:0 12px 30px #159bd718
-}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.category{background:#fff;border:1px solid #e1f1f7;border-radius:18px;padding:23px 12px;text-align:center;transition:.2s}
+.category:hover{transform:translateY(-4px);box-shadow:0 12px 30px #159bd718}
 .category-icon{font-size:38px;margin-bottom:9px}
 .category b{display:block;margin-bottom:5px}
 .category small{color:#748590}
 
-.search{
-  max-width:600px;margin:0 auto 25px
-}
-.search input{
-  width:100%;padding:15px 18px;border:1px solid #d8eaf1;
-  border-radius:14px;outline:0;background:#fff
-}
-.search input:focus{
-  border-color:#159bd7;box-shadow:0 0 0 3px #159bd715
-}
+.search{max-width:600px;margin:0 auto 25px}
+.search input{width:100%;padding:15px 18px;border:1px solid #d8eaf1;border-radius:14px;outline:0;background:#fff}
+.search input:focus{border-color:#159bd7;box-shadow:0 0 0 3px #159bd715}
 
-.products{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:16px
-}
-.product{
-  background:#fff;border:1px solid #e1edf2;border-radius:18px;
-  overflow:hidden;box-shadow:0 5px 18px #159bd70b
-}
-.product-img{
-  height:190px;background:#edfaff;
-  display:flex;align-items:center;justify-content:center;
-  overflow:hidden;font-size:70px
-}
-.product-img img{
-  width:100%;height:100%;object-fit:cover
-}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.product{background:#fff;border:1px solid #e1edf2;border-radius:18px;overflow:hidden;box-shadow:0 5px 18px #159bd70b}
+.product-img{height:190px;background:#edfaff;display:flex;align-items:center;justify-content:center;overflow:hidden;font-size:70px}
+.product-img img{width:100%;height:100%;object-fit:cover}
 .product-body{padding:15px}
 .product-name{font-weight:900;min-height:42px}
-.product-price{
-  color:#0798d8;font-weight:900;font-size:19px;margin:8px 0 12px
-}
+.product-price{color:#0798d8;font-weight:900;font-size:19px;margin:8px 0 12px}
 .actions{display:flex;gap:7px}
 .actions button{flex:1}
 
-.price-wrap{
-  background:#fff;border-radius:18px;overflow:auto;
-  box-shadow:0 5px 25px #159bd710
-}
+.price-wrap{background:#fff;border-radius:18px;overflow:auto;box-shadow:0 5px 25px #159bd710}
 table{width:100%;border-collapse:collapse;min-width:600px}
 th,td{padding:14px;border-bottom:1px solid #edf2f5;text-align:left}
 th{background:#159bd7;color:#fff}
 td.price{color:#0798d8;font-weight:900}
 
-.booking{
-  max-width:850px;margin:auto;background:#fff;padding:25px;
-  border-radius:22px;box-shadow:0 10px 35px #159bd710
-}
-.form-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:15px
-}
+.booking{max-width:850px;margin:auto;background:#fff;padding:25px;border-radius:22px;box-shadow:0 10px 35px #159bd710}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
 .field{margin-bottom:14px}
 .field.full{grid-column:1/-1}
 .field label{display:block;font-weight:800;margin-bottom:7px}
-.field input,.field select,.field textarea{
-  width:100%;padding:13px;border:1px solid #d9e9ef;
-  border-radius:11px;outline:0;background:#fff
-}
+.field input,.field select,.field textarea{width:100%;padding:13px;border:1px solid #d9e9ef;border-radius:11px;outline:0;background:#fff}
 .field textarea{min-height:100px;resize:vertical}
 
-footer{
-  background:#10212b;color:#fff;padding:40px 18px
-}
-.footer{
-  max-width:1200px;margin:auto;
-  display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px
-}
+footer{background:#10212b;color:#fff;padding:40px 18px}
+.footer{max-width:1200px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
 footer p{color:#b9c8cf;line-height:1.8;margin-top:8px}
 
-.float{
-  position:fixed;left:14px;bottom:14px;z-index:1400;
-  display:flex;flex-direction:column;gap:8px
-}
-.float a{
-  color:white;padding:10px 14px;border-radius:30px;
-  font-weight:900;box-shadow:0 6px 20px #0002
-}
+.float{position:fixed;left:14px;bottom:14px;z-index:1400;display:flex;flex-direction:column;gap:8px}
+.float a{color:#fff;padding:10px 14px;border-radius:30px;font-weight:900;box-shadow:0 6px 20px #0002}
 .phone-link{background:#e53935}
 .zalo-link{background:#078fe0}
 
-.panel-bg,.modal-bg{
-  display:none;position:fixed;inset:0;background:#0007;z-index:2000
-}
+.panel-bg,.modal-bg{display:none;position:fixed;inset:0;background:#0007;z-index:2000}
 .panel-bg.show,.modal-bg.show{display:block}
+.panel{position:absolute;right:0;top:0;height:100%;width:min(460px,100%);background:#fff;padding:20px;overflow:auto}
+.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.close{border:0;background:#edf7fb;border-radius:10px;padding:8px 12px}
 
-.panel{
-  position:absolute;right:0;top:0;height:100%;width:min(460px,100%);
-  background:#fff;padding:20px;overflow:auto
-}
-.panel-head{
-  display:flex;justify-content:space-between;align-items:center;
-  margin-bottom:20px
-}
-.close{
-  border:0;background:#edf7fb;border-radius:10px;padding:8px 12px
-}
-
-.cart-item{
-  padding:14px 0;border-bottom:1px solid #eee
-}
+.cart-item{padding:14px 0;border-bottom:1px solid #eee}
 .cart-top{display:flex;justify-content:space-between;gap:10px}
 .qty{display:flex;align-items:center;gap:8px;margin-top:8px}
-.qty button{
-  width:30px;height:30px;border:0;border-radius:8px;
-  background:#eaf8ff;color:#078fca;font-weight:900
-}
+.qty button{width:30px;height:30px;border:0;border-radius:8px;background:#eaf8ff;color:#078fca;font-weight:900}
 .total{font-size:21px;font-weight:900;padding:20px 0}
 
-.admin-bg{
-  display:none;position:fixed;inset:0;background:#0008;
-  z-index:2100;padding:15px;overflow:auto
-}
+.login{max-width:420px;margin:80px auto;background:#fff;padding:25px;border-radius:20px;box-shadow:0 15px 50px #0002}
+.login h2{text-align:center;margin-bottom:20px}
+.login input{width:100%;padding:13px;margin-bottom:12px;border:1px solid #d8e8ef;border-radius:10px;outline:0}
+
+.admin-bg{display:none;position:fixed;inset:0;background:#0008;z-index:2100;padding:15px;overflow:auto}
 .admin-bg.show{display:block}
-.admin{
-  max-width:1100px;margin:30px auto;background:#fff;
-  border-radius:20px;overflow:hidden
-}
-.admin-head{
-  background:#10212b;color:#fff;padding:18px;
-  display:flex;justify-content:space-between;align-items:center
-}
+.admin{max-width:1100px;margin:30px auto;background:#fff;border-radius:20px;overflow:hidden}
+.admin-head{background:#10212b;color:#fff;padding:18px;display:flex;justify-content:space-between;align-items:center}
 .admin-body{padding:20px}
-.admin-nav{
-  display:flex;gap:8px;overflow:auto;padding-bottom:15px
-}
-.admin-nav button{
-  border:0;background:#eaf8ff;color:#078fca;
-  padding:10px 13px;border-radius:10px;font-weight:800;
-  white-space:nowrap
-}
+.admin-nav{display:flex;gap:8px;overflow:auto;padding-bottom:15px}
+.admin-nav button{border:0;background:#eaf8ff;color:#078fca;padding:10px 13px;border-radius:10px;font-weight:800;white-space:nowrap}
 .admin-section{display:none}
 .admin-section.active{display:block}
-
-.admin-card{
-  background:#f8fcfe;border:1px solid #e1edf2;
-  border-radius:15px;padding:15px;margin-bottom:12px
-}
-.admin-row{
-  display:grid;grid-template-columns:1fr 1fr;gap:10px
-}
-.admin input,.admin select,.admin textarea{
-  width:100%;padding:11px;border:1px solid #d6e7ee;
-  border-radius:9px;background:white;outline:0
-}
+.admin-card{background:#f8fcfe;border:1px solid #e1edf2;border-radius:15px;padding:15px;margin-bottom:12px}
+.admin-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.admin input,.admin select,.admin textarea{width:100%;padding:11px;border:1px solid #d6e7ee;border-radius:9px;background:#fff;outline:0}
 .admin textarea{min-height:80px}
-.admin label{
-  display:block;font-size:13px;font-weight:800;margin:8px 0 5px
-}
+.admin label{display:block;font-size:13px;font-weight:800;margin:8px 0 5px}
 .admin-actions{display:flex;gap:7px;margin-top:10px;flex-wrap:wrap}
 
-.toast{
-  position:fixed;left:50%;bottom:25px;
-  transform:translateX(-50%) translateY(100px);
-  background:#10212b;color:white;padding:13px 18px;
-  border-radius:12px;z-index:4000;opacity:0;transition:.3s
-}
-.toast.show{
-  transform:translateX(-50%) translateY(0);opacity:1
-}
-
-.login{
-  max-width:420px;margin:80px auto;background:#fff;
-  padding:25px;border-radius:20px;box-shadow:0 15px 50px #0002
-}
-.login h2{text-align:center;margin-bottom:20px}
-.login input{
-  width:100%;padding:13px;margin-bottom:12px;
-  border:1px solid #d8e8ef;border-radius:10px;outline:0
-}
-
+.toast{position:fixed;left:50%;bottom:25px;transform:translateX(-50%) translateY(100px);background:#10212b;color:#fff;padding:13px 18px;border-radius:12px;z-index:4000;opacity:0;transition:.3s}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
 .empty{text-align:center;padding:40px;color:#748590}
 
 @media(max-width:900px){
-  .hero-inner{grid-template-columns:1fr}
-  .grid,.products{grid-template-columns:repeat(2,1fr)}
-  .footer{grid-template-columns:1fr 1fr}
+.hero-inner{grid-template-columns:1fr}
+.grid,.products{grid-template-columns:repeat(2,1fr)}
+.footer{grid-template-columns:1fr 1fr}
 }
 @media(max-width:650px){
-  .menu{display:block}
-  .nav{
-    display:none;position:absolute;top:68px;left:0;right:0;
-    background:#fff;padding:10px;box-shadow:0 10px 20px #0001;
-    flex-direction:column;align-items:stretch
-  }
-  .nav.show{display:flex}
-  .nav button{text-align:left}
-  .hero{padding:45px 15px}
-  .container{padding:42px 15px}
-  .grid,.products{grid-template-columns:repeat(2,1fr);gap:10px}
-  .product-img{height:145px;font-size:55px}
-  .form-grid,.admin-row{grid-template-columns:1fr}
-  .field.full{grid-column:auto}
-  .footer{grid-template-columns:1fr}
+.menu{display:block}
+.nav{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;padding:10px;box-shadow:0 10px 20px #0001;flex-direction:column;align-items:stretch}
+.nav.show{display:flex}
+.nav button{text-align:left}
+.hero{padding:45px 15px}
+.container{padding:42px 15px}
+.grid,.products{grid-template-columns:repeat(2,1fr);gap:10px}
+.product-img{height:145px;font-size:55px}
+.form-grid,.admin-row{grid-template-columns:1fr}
+.field.full{grid-column:auto}
+.footer{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -299,9 +147,7 @@ footer p{color:#b9c8cf;line-height:1.8;margin-top:8px}
 
 <header>
 <div class="header">
-
 <a class="logo" href="#home">PD <span>TechCare</span></a>
-
 <button class="menu" onclick="toggleMenu()">☰</button>
 
 <nav class="nav" id="nav">
@@ -312,24 +158,15 @@ footer p{color:#b9c8cf;line-height:1.8;margin-top:8px}
 <button class="cart-btn" onclick="openCart()">🛒 Giỏ <span id="cartCount">0</span></button>
 <button class="admin-btn" onclick="openAdminLogin()">🔐 Admin</button>
 </nav>
-
 </div>
 </header>
 
-
 <section class="hero" id="home">
 <div class="hero-inner">
-
 <div>
 <div style="font-weight:900;color:#159bd7">PD TECHCARE</div>
-
 <h1>Sửa chữa & <span>phụ kiện điện thoại</span></h1>
-
-<p>
-Trung tâm sửa chữa điện thoại, bán iPhone và phụ kiện.
-Xem giá, đặt lịch sửa máy nhanh chóng.
-</p>
-
+<p>Trung tâm sửa chữa điện thoại, bán iPhone và phụ kiện. Xem giá và đặt lịch sửa máy nhanh chóng.</p>
 <div class="hero-buttons">
 <button class="btn primary" onclick="go('booking')">📅 Đặt lịch sửa máy</button>
 <button class="btn light" onclick="go('shop')">🛒 Xem cửa hàng</button>
@@ -339,14 +176,10 @@ Xem giá, đặt lịch sửa máy nhanh chóng.
 <div class="hero-card">
 <div class="phone">PD<br>TECHCARE</div>
 <h3>📱 Chăm sóc điện thoại của bạn</h3>
-<p style="margin:8px 0 0;color:#71818d">
-Ép kính • Thay màn • Thay pin • Sửa main
-</p>
+<p style="margin:8px 0 0;color:#71818d">Ép kính • Thay màn • Thay pin • Sửa main</p>
 </div>
-
 </div>
 </section>
-
 
 <section class="container">
 <div class="title">
@@ -355,45 +188,18 @@ Xem giá, đặt lịch sửa máy nhanh chóng.
 </div>
 
 <div class="grid">
-
-<div class="category" onclick="filterShop('Củ sạc')">
-<div class="category-icon">🔌</div><b>Củ sạc</b><small>Sạc nhanh</small>
-</div>
-
-<div class="category" onclick="filterShop('Cáp sạc')">
-<div class="category-icon">🔋</div><b>Cáp sạc</b><small>Type-C / Lightning</small>
-</div>
-
-<div class="category" onclick="filterShop('Tai nghe')">
-<div class="category-icon">🎧</div><b>Tai nghe</b><small>Bluetooth / có dây</small>
-</div>
-
-<div class="category" onclick="filterShop('Cường lực')">
-<div class="category-icon">🛡️</div><b>Cường lực</b><small>Bảo vệ màn hình</small>
-</div>
-
-<div class="category" onclick="filterShop('Ốp lưng')">
-<div class="category-icon">📱</div><b>Ốp lưng</b><small>Bảo vệ máy</small>
-</div>
-
-<div class="category" onclick="filterShop('iPhone')">
-<div class="category-icon">📱</div><b>iPhone</b><small>Điện thoại</small>
-</div>
-
-<div class="category" onclick="filterShop('Phụ kiện')">
-<div class="category-icon">🧰</div><b>Phụ kiện</b><small>Công nghệ</small>
-</div>
-
-<div class="category" onclick="go('repair')">
-<div class="category-icon">🔧</div><b>Sửa chữa</b><small>Bảng giá</small>
-</div>
-
+<div class="category" onclick="filterShop('Củ sạc')"><div class="category-icon">🔌</div><b>Củ sạc</b><small>Sạc nhanh</small></div>
+<div class="category" onclick="filterShop('Cáp sạc')"><div class="category-icon">🔋</div><b>Cáp sạc</b><small>Type-C / Lightning</small></div>
+<div class="category" onclick="filterShop('Tai nghe')"><div class="category-icon">🎧</div><b>Tai nghe</b><small>Bluetooth / có dây</small></div>
+<div class="category" onclick="filterShop('Cường lực')"><div class="category-icon">🛡️</div><b>Cường lực</b><small>Bảo vệ màn hình</small></div>
+<div class="category" onclick="filterShop('Ốp lưng')"><div class="category-icon">📱</div><b>Ốp lưng</b><small>Bảo vệ máy</small></div>
+<div class="category" onclick="filterShop('iPhone')"><div class="category-icon">📱</div><b>iPhone</b><small>Điện thoại</small></div>
+<div class="category" onclick="filterShop('Phụ kiện')"><div class="category-icon">🧰</div><b>Phụ kiện</b><small>Công nghệ</small></div>
+<div class="category" onclick="go('repair')"><div class="category-icon">🔧</div><b>Sửa chữa</b><small>Bảng giá</small></div>
 </div>
 </section>
 
-
 <section class="container" id="shop">
-
 <div class="title">
 <h2>🛒 Cửa hàng</h2>
 <p>Sản phẩm và phụ kiện</p>
@@ -404,12 +210,9 @@ Xem giá, đặt lịch sửa máy nhanh chóng.
 </div>
 
 <div class="products" id="products"></div>
-
 </section>
 
-
 <section class="container" id="repair">
-
 <div class="title">
 <h2>🔧 Bảng giá sửa chữa</h2>
 <p>Giá tham khảo — Admin có thể cập nhật</p>
@@ -422,32 +225,22 @@ Xem giá, đặt lịch sửa máy nhanh chóng.
 <div class="price-wrap">
 <table>
 <thead>
-<tr>
-<th>Model</th>
-<th>Dịch vụ</th>
-<th>Giá</th>
-</tr>
+<tr><th>Model</th><th>Dịch vụ</th><th>Giá</th></tr>
 </thead>
 <tbody id="repairTable"></tbody>
 </table>
 </div>
 
-<p style="text-align:center;color:#71818d;margin-top:12px">
-* Giá có thể thay đổi tùy tình trạng máy và linh kiện.
-</p>
-
+<p style="text-align:center;color:#71818d;margin-top:12px">* Giá có thể thay đổi tùy tình trạng máy và linh kiện.</p>
 </section>
 
-
 <section class="container" id="booking">
-
 <div class="title">
 <h2>📅 Đặt lịch sửa máy</h2>
 <p>Điền thông tin để cửa hàng liên hệ xác nhận</p>
 </div>
 
 <div class="booking">
-
 <div class="form-grid">
 
 <div class="field">
@@ -503,58 +296,33 @@ Xem giá, đặt lịch sửa máy nhanh chóng.
 
 </div>
 
-<button class="btn primary" style="width:100%" onclick="submitBooking()">
-📅 GỬI ĐẶT LỊCH
-</button>
-
+<button class="btn primary" style="width:100%" onclick="submitBooking()">📅 GỬI ĐẶT LỊCH</button>
 </div>
 </section>
 
-
 <footer>
 <div class="footer">
-
 <div>
 <h2 class="logo" style="color:white">PD <span style="color:#55d0ff">TechCare</span></h2>
 <p>Trung tâm sửa chữa điện thoại, iPhone và phụ kiện.</p>
 <p>☎️ Hotline: <b style="color:white">0786 833 253</b></p>
 <p>🟢 Zalo: <b style="color:white">0786 833 253</b></p>
 </div>
-
-<div>
-<h3>Danh mục</h3>
-<p>Phụ kiện</p>
-<p>iPhone</p>
-<p>Sửa chữa</p>
-<p>Đặt lịch</p>
+<div><h3>Danh mục</h3><p>Phụ kiện</p><p>iPhone</p><p>Sửa chữa</p><p>Đặt lịch</p></div>
+<div><h3>Hỗ trợ</h3><p>Liên hệ cửa hàng</p><p>Bảo hành</p><p>Chính sách sửa chữa</p></div>
 </div>
 
-<div>
-<h3>Hỗ trợ</h3>
-<p>Liên hệ cửa hàng</p>
-<p>Bảo hành</p>
-<p>Chính sách sửa chữa</p>
-</div>
-
-</div>
-
-<p style="text-align:center;margin-top:30px;border-top:1px solid #ffffff15;padding-top:20px">
-© 2026 PD TechCare
-</p>
+<p style="text-align:center;margin-top:30px;border-top:1px solid #ffffff15;padding-top:20px">© 2026 PD TechCare</p>
 </footer>
-
 
 <div class="float">
 <a class="phone-link" href="tel:0786833253">☎️ HOTLINE</a>
 <a class="zalo-link" href="https://zalo.me/0786833253" target="_blank">🟢 ZALO</a>
 </div>
 
-
 <!-- CART -->
-
 <div class="panel-bg" id="cartBg" onclick="outsideCart(event)">
 <div class="panel">
-
 <div class="panel-head">
 <h2>🛒 Giỏ hàng</h2>
 <button class="close" onclick="closeCart()">✕</button>
@@ -563,53 +331,37 @@ Xem giá, đặt lịch sửa máy nhanh chóng.
 <div id="cartItems"></div>
 <div class="total">Tổng: <span id="cartTotal">0đ</span></div>
 
-<button class="btn primary" style="width:100%" onclick="orderCart()">
-📦 ĐẶT HÀNG QUA ZALO
-</button>
-
+<button class="btn primary" style="width:100%" onclick="orderCart()">📦 ĐẶT HÀNG QUA ZALO</button>
 </div>
 </div>
 
-
-<!-- ADMIN LOGIN -->
-
+<!-- LOGIN -->
 <div class="modal-bg" id="loginBg">
 <div class="login">
-
 <h2>🔐 PD TechCare Admin</h2>
 
-<input id="adminUser" placeholder="Tài khoản Admin">
-<input id="adminPass" type="password" placeholder="Mật khẩu Admin">
+<input id="adminEmail" type="email" placeholder="Email Admin">
+<input id="adminPassword" type="password" placeholder="Mật khẩu Admin">
 
-<button class="btn primary" style="width:100%" onclick="adminLogin()">
-ĐĂNG NHẬP
-</button>
+<button class="btn primary" style="width:100%" onclick="adminLogin()">ĐĂNG NHẬP</button>
 
-<button class="btn light" style="width:100%;margin-top:8px" onclick="closeAdminLogin()">
-Hủy
-</button>
+<button class="btn light" style="width:100%;margin-top:8px" onclick="closeAdminLogin()">Hủy</button>
 
 <p style="font-size:12px;color:#8796a0;margin-top:15px">
-Mật khẩu mặc định của bản code này: <b>123456</b><br>
-Hãy đổi trong code trước khi đưa website vào sử dụng.
+Đăng nhập bằng email và mật khẩu Admin Firebase bạn vừa tạo.
 </p>
-
 </div>
 </div>
-
 
 <!-- ADMIN -->
-
 <div class="admin-bg" id="adminBg">
-
 <div class="admin">
 
 <div class="admin-head">
 <div>
 <b>PD TechCare ADMIN</b>
-<div style="font-size:12px;opacity:.7">Quản lý cửa hàng</div>
+<div style="font-size:12px;opacity:.7">Quản lý cửa hàng online</div>
 </div>
-
 <button class="close" onclick="logoutAdmin()">Đăng xuất</button>
 </div>
 
@@ -621,15 +373,11 @@ Hãy đổi trong code trước khi đưa website vào sử dụng.
 <button onclick="adminTab('bookingAdmin')">📅 Lịch hẹn</button>
 </div>
 
-
-<!-- PRODUCTS ADMIN -->
-
 <div class="admin-section active" id="productsAdmin">
 
 <h2 style="margin-bottom:15px">🛒 Quản lý sản phẩm</h2>
 
 <div class="admin-card">
-
 <h3>➕ Thêm sản phẩm</h3>
 
 <div class="admin-row">
@@ -658,7 +406,7 @@ Hãy đổi trong code trước khi đưa website vào sử dụng.
 </div>
 
 <div>
-<label>Emoji / hình đại diện</label>
+<label>Emoji</label>
 <input id="newIcon" placeholder="🔌">
 </div>
 
@@ -674,29 +422,20 @@ Hãy đổi trong code trước khi đưa website vào sử dụng.
 
 </div>
 
-<button class="btn primary" style="margin-top:10px" onclick="addProductAdmin()">
-➕ THÊM SẢN PHẨM
-</button>
-
+<button class="btn primary" style="margin-top:10px" onclick="addProductAdmin()">➕ THÊM SẢN PHẨM</button>
 </div>
 
 <div id="adminProducts"></div>
-
 </div>
-
-
-<!-- REPAIR ADMIN -->
 
 <div class="admin-section" id="repairAdmin">
 
 <h2 style="margin-bottom:15px">🔧 Quản lý giá sửa chữa</h2>
 
 <div class="admin-card">
-
 <h3>➕ Thêm dịch vụ</h3>
 
 <div class="admin-row">
-
 <div>
 <label>Model / hãng</label>
 <input id="newRepairModel" placeholder="iPhone 18 Pro Max">
@@ -711,135 +450,89 @@ Hãy đổi trong code trước khi đưa website vào sử dụng.
 <label>Giá</label>
 <input id="newRepairPrice" placeholder="Liên hệ">
 </div>
-
 </div>
 
-<button class="btn primary" style="margin-top:10px" onclick="addRepairAdmin()">
-➕ THÊM DỊCH VỤ
-</button>
-
+<button class="btn primary" style="margin-top:10px" onclick="addRepairAdmin()">➕ THÊM DỊCH VỤ</button>
 </div>
 
 <div id="adminRepairs"></div>
-
 </div>
-
-
-<!-- BOOKING ADMIN -->
 
 <div class="admin-section" id="bookingAdmin">
 
 <h2 style="margin-bottom:15px">📅 Quản lý lịch hẹn</h2>
-
 <div id="adminBookings"></div>
-
 </div>
 
 </div>
 </div>
 </div>
-
 
 <div class="toast" id="toast"></div>
 
+<script type="module">
 
-<script>
+/* =====================================================
+   FIREBASE
+===================================================== */
 
-/* ================================
-   DỮ LIỆU
-================================ */
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+import {
+ getAuth,
+ signInWithEmailAndPassword,
+ onAuthStateChanged,
+ signOut
+}
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+import {
+ getFirestore,
+ collection,
+ addDoc,
+ getDocs,
+ doc,
+ setDoc,
+ deleteDoc,
+ query,
+ orderBy
+}
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+const firebaseConfig={
+ apiKey:"AIzaSyBPKC-Zy6KQ03irOrcIGtMEMxxb2UUrXQw",
+ authDomain:"pdtechcare-shop-b674e.firebaseapp.com",
+ projectId:"pdtechcare-shop-b674e",
+ storageBucket:"pdtechcare-shop-b674e.firebasestorage.app",
+ messagingSenderId:"139800094399",
+ appId:"1:139800094399:web:6cbf9ce4a5aca26ae6080a",
+ measurementId:"G-K2257YTXR8"
+};
+
+const app=initializeApp(firebaseConfig);
+const auth=getAuth(app);
+const db=getFirestore(app);
+
+const ADMIN_UID="ulNfAPkJ9ufdtHyVWsFNq2qZTVU2";
+
+
+/* =====================================================
+   DỮ LIỆU MẶC ĐỊNH
+===================================================== */
 
 const DEFAULT_PRODUCTS=[
-{
- id:1,
- name:"Củ sạc nhanh 20W",
- price:150000,
- category:"Củ sạc",
- icon:"🔌",
- image:"",
- desc:"Củ sạc nhanh 20W."
-},
-{
- id:2,
- name:"Củ sạc nhanh 33W",
- price:220000,
- category:"Củ sạc",
- icon:"🔌",
- image:"",
- desc:"Củ sạc nhanh công suất cao."
-},
-{
- id:3,
- name:"Cáp Type-C 1m",
- price:99000,
- category:"Cáp sạc",
- icon:"🔋",
- image:"",
- desc:"Cáp Type-C 1m."
-},
-{
- id:4,
- name:"Cáp Lightning 1m",
- price:120000,
- category:"Cáp sạc",
- icon:"🔋",
- image:"",
- desc:"Cáp Lightning cho iPhone."
-},
-{
- id:5,
- name:"Tai nghe Bluetooth",
- price:350000,
- category:"Tai nghe",
- icon:"🎧",
- image:"",
- desc:"Tai nghe Bluetooth."
-},
-{
- id:6,
- name:"Cường lực iPhone",
- price:70000,
- category:"Cường lực",
- icon:"🛡️",
- image:"",
- desc:"Cường lực bảo vệ màn hình."
-},
-{
- id:7,
- name:"Ốp lưng điện thoại",
- price:80000,
- category:"Ốp lưng",
- icon:"📱",
- image:"",
- desc:"Ốp lưng bảo vệ máy."
-},
-{
- id:8,
- name:"iPhone 13 128GB",
- price:10500000,
- category:"iPhone",
- icon:"📱",
- image:"",
- desc:"iPhone 13 128GB."
-},
-{
- id:9,
- name:"iPhone 14 128GB",
- price:12500000,
- category:"iPhone",
- icon:"📱",
- image:"",
- desc:"iPhone 14 128GB."
-},
-{
- id:10,
- name:"iPhone 15 128GB",
- price:14500000,
- category:"iPhone",
- icon:"📱",
- image:"",
- desc:"iPhone 15 128GB."
-}
+{name:"Củ sạc nhanh 20W",price:150000,category:"Củ sạc",icon:"🔌",image:"",desc:"Củ sạc nhanh 20W."},
+{name:"Củ sạc nhanh 33W",price:220000,category:"Củ sạc",icon:"🔌",image:"",desc:"Củ sạc nhanh công suất cao."},
+{name:"Cáp Type-C 1m",price:99000,category:"Cáp sạc",icon:"🔋",image:"",desc:"Cáp Type-C 1m."},
+{name:"Cáp Lightning 1m",price:120000,category:"Cáp sạc",icon:"🔋",image:"",desc:"Cáp Lightning cho iPhone."},
+{name:"Tai nghe Bluetooth",price:350000,category:"Tai nghe",icon:"🎧",image:"",desc:"Tai nghe Bluetooth."},
+{name:"Cường lực iPhone",price:70000,category:"Cường lực",icon:"🛡️",image:"",desc:"Cường lực bảo vệ màn hình."},
+{name:"Ốp lưng điện thoại",price:80000,category:"Ốp lưng",icon:"📱",image:"",desc:"Ốp lưng bảo vệ máy."},
+{name:"iPhone 13 128GB",price:10500000,category:"iPhone",icon:"📱",image:"",desc:"iPhone 13 128GB."},
+{name:"iPhone 14 128GB",price:12500000,category:"iPhone",icon:"📱",image:"",desc:"iPhone 14 128GB."},
+{name:"iPhone 15 128GB",price:14500000,category:"iPhone",icon:"📱",image:"",desc:"iPhone 15 128GB."}
 ];
 
 const DEFAULT_REPAIRS=[
@@ -885,43 +578,26 @@ const DEFAULT_REPAIRS=[
 ["Tất cả dòng","Sửa loa / mic","Liên hệ"]
 ];
 
-let products=
-JSON.parse(localStorage.getItem("PD_PRODUCTS")||"null")
-||DEFAULT_PRODUCTS;
-
-let repairs=
-JSON.parse(localStorage.getItem("PD_REPAIRS")||"null")
-||DEFAULT_REPAIRS;
-
-let bookings=
-JSON.parse(localStorage.getItem("PD_BOOKINGS")||"[]");
-
-let cart=
-JSON.parse(localStorage.getItem("PD_CART")||"[]");
-
+let products=[];
+let repairs=[];
+let bookings=[];
+let cart=[];
 let adminLogged=false;
 
 
-/* ================================
-   HỖ TRỢ
-================================ */
+/* =====================================================
+   HELPERS
+===================================================== */
 
 function money(n){
  return Number(n||0).toLocaleString("vi-VN")+"đ";
-}
-
-function saveAll(){
- localStorage.setItem("PD_PRODUCTS",JSON.stringify(products));
- localStorage.setItem("PD_REPAIRS",JSON.stringify(repairs));
- localStorage.setItem("PD_BOOKINGS",JSON.stringify(bookings));
- localStorage.setItem("PD_CART",JSON.stringify(cart));
 }
 
 function toast(text){
  const x=document.getElementById("toast");
  x.textContent=text;
  x.classList.add("show");
- setTimeout(()=>x.classList.remove("show"),2200);
+ setTimeout(()=>x.classList.remove("show"),2500);
 }
 
 function go(id){
@@ -933,60 +609,197 @@ function toggleMenu(){
  document.getElementById("nav").classList.toggle("show");
 }
 
+function esc(v){
+ return String(v??"")
+ .replace(/&/g,"&amp;")
+ .replace(/</g,"&lt;")
+ .replace(/>/g,"&gt;")
+ .replace(/"/g,"&quot;")
+ .replace(/'/g,"&#039;");
+}
 
-/* ================================
-   PRODUCTS
-================================ */
+
+/* =====================================================
+   FIRESTORE - PRODUCTS
+===================================================== */
+
+async function loadProducts(){
+
+ try{
+
+  const snap=await getDocs(collection(db,"products"));
+
+  if(snap.empty){
+
+   for(const p of DEFAULT_PRODUCTS){
+
+    const ref=await addDoc(collection(db,"products"),{
+     ...p,
+     createdAt:Date.now()
+    });
+
+    products.push({
+     id:ref.id,
+     ...p
+    });
+   }
+
+  }else{
+
+   products=snap.docs.map(d=>({
+    id:d.id,
+    ...d.data()
+   }));
+
+  }
+
+  renderProducts();
+
+ }catch(error){
+
+  console.error(error);
+
+  document.getElementById("products").innerHTML=
+  `<div class="empty" style="grid-column:1/-1">
+   ⚠️ Không tải được sản phẩm.<br><br>
+   ${esc(error.message)}
+  </div>`;
+
+ }
+}
+
+
+/* =====================================================
+   FIRESTORE - REPAIRS
+===================================================== */
+
+async function loadRepairs(){
+
+ try{
+
+  const snap=await getDocs(collection(db,"repairs"));
+
+  if(snap.empty){
+
+   for(const r of DEFAULT_REPAIRS){
+
+    const ref=await addDoc(collection(db,"repairs"),{
+     model:r[0],
+     service:r[1],
+     price:r[2],
+     createdAt:Date.now()
+    });
+
+    repairs.push({
+     id:ref.id,
+     model:r[0],
+     service:r[1],
+     price:r[2]
+    });
+   }
+
+  }else{
+
+   repairs=snap.docs.map(d=>({
+    id:d.id,
+    ...d.data()
+   }));
+
+  }
+
+  renderRepairs();
+
+ }catch(error){
+
+  console.error(error);
+
+  document.getElementById("repairTable").innerHTML=
+  `<tr><td colspan="3">Không tải được bảng giá.</td></tr>`;
+
+ }
+}
+
+
+/* =====================================================
+   FIRESTORE - BOOKINGS
+===================================================== */
+
+async function loadBookings(){
+
+ if(!adminLogged)return;
+
+ try{
+
+  const snap=await getDocs(collection(db,"bookings"));
+
+  bookings=snap.docs.map(d=>({
+   id:d.id,
+   ...d.data()
+  }));
+
+  bookings.sort((a,b)=>
+   Number(b.createdAt||0)-Number(a.createdAt||0)
+  );
+
+  renderAdminBookings();
+
+ }catch(error){
+
+  console.error(error);
+  toast("Không tải được lịch hẹn");
+
+ }
+}
+
+
+/* =====================================================
+   PRODUCTS UI
+===================================================== */
 
 function renderProducts(){
 
  const q=(document.getElementById("productSearch").value||"").toLowerCase();
 
  const list=products.filter(p=>
-  p.name.toLowerCase().includes(q) ||
-  p.category.toLowerCase().includes(q)
+  String(p.name||"").toLowerCase().includes(q) ||
+  String(p.category||"").toLowerCase().includes(q)
  );
 
  document.getElementById("products").innerHTML=list.map(p=>`
 
  <div class="product">
 
-  <div class="product-img">
+ <div class="product-img">
 
-   ${p.image
-    ? `<img src="${escapeAttr(p.image)}" alt="">`
-    : p.icon||"📱"}
+ ${p.image
+ ? `<img src="${esc(p.image)}" alt="">`
+ : esc(p.icon||"📱")}
 
-  </div>
-
-  <div class="product-body">
-
-   <div class="product-name">${escapeHtml(p.name)}</div>
-
-   <div class="product-price">${money(p.price)}</div>
-
-   <div class="actions">
-
-    <button class="btn light"
-      onclick="viewProduct(${p.id})">
-      Chi tiết
-    </button>
-
-    <button class="btn primary"
-      onclick="addCart(${p.id})">
-      🛒 Thêm
-    </button>
-
-   </div>
-
-  </div>
  </div>
 
- `).join("") || `<div class="empty" style="grid-column:1/-1">
- Không tìm thấy sản phẩm.
- </div>`;
-}
+ <div class="product-body">
 
+ <div class="product-name">${esc(p.name)}</div>
+
+ <div class="product-price">${money(p.price)}</div>
+
+ <div class="actions">
+
+ <button class="btn light" onclick="viewProduct('${p.id}')">
+ Chi tiết
+ </button>
+
+ <button class="btn primary" onclick="addCart('${p.id}')">
+ 🛒 Thêm
+ </button>
+
+ </div>
+
+ </div>
+ </div>
+
+ `).join("") || `<div class="empty" style="grid-column:1/-1">Không tìm thấy sản phẩm.</div>`;
+}
 
 function filterShop(category){
  document.getElementById("productSearch").value=category;
@@ -994,26 +807,21 @@ function filterShop(category){
  renderProducts();
 }
 
-
 function viewProduct(id){
 
  const p=products.find(x=>x.id===id);
  if(!p)return;
 
  alert(
- p.name+
- "\n\n"+
- "Giá: "+money(p.price)+
- "\n\n"+
- (p.desc||"")
+ `${p.name}\n\nGiá: ${money(p.price)}\n\n${p.desc||""}`
  );
 
 }
 
 
-/* ================================
+/* =====================================================
    CART
-================================ */
+===================================================== */
 
 function addCart(id){
 
@@ -1022,11 +830,9 @@ function addCart(id){
  if(item)item.qty++;
  else cart.push({id,qty:1});
 
- saveAll();
  renderCart();
  toast("🛒 Đã thêm vào giỏ");
 }
-
 
 function changeQty(id,n){
 
@@ -1039,69 +845,73 @@ function changeQty(id,n){
   cart=cart.filter(x=>x.id!==id);
  }
 
- saveAll();
  renderCart();
 }
-
 
 function removeCart(id){
  cart=cart.filter(x=>x.id!==id);
- saveAll();
  renderCart();
 }
-
 
 function renderCart(){
 
  let count=0,total=0;
 
  cart.forEach(i=>{
+
   const p=products.find(x=>x.id===i.id);
+
   if(p){
    count+=i.qty;
    total+=p.price*i.qty;
   }
+
  });
 
  document.getElementById("cartCount").textContent=count;
  document.getElementById("cartTotal").textContent=money(total);
 
- const box=document.getElementById("cartItems");
-
  if(!cart.length){
-  box.innerHTML='<div class="empty">🛒<br><br>Giỏ hàng trống</div>';
+
+  document.getElementById("cartItems").innerHTML=
+  '<div class="empty">🛒<br><br>Giỏ hàng trống</div>';
+
   return;
  }
 
- box.innerHTML=cart.map(i=>{
+ document.getElementById("cartItems").innerHTML=cart.map(i=>{
 
   const p=products.find(x=>x.id===i.id);
+
   if(!p)return"";
 
   return `
   <div class="cart-item">
 
-   <div class="cart-top">
-    <div>
-     <b>${escapeHtml(p.name)}</b>
-     <div style="color:#159bd7;font-weight:900;margin-top:4px">
-      ${money(p.price)}
-     </div>
-    </div>
+  <div class="cart-top">
 
-    <button class="close" onclick="removeCart(${p.id})">✕</button>
-   </div>
+  <div>
+  <b>${esc(p.name)}</b>
+  <div style="color:#159bd7;font-weight:900;margin-top:4px">
+  ${money(p.price)}
+  </div>
+  </div>
 
-   <div class="qty">
-    <button onclick="changeQty(${p.id},-1)">−</button>
-    <b>${i.qty}</b>
-    <button onclick="changeQty(${p.id},1)">+</button>
-   </div>
+  <button class="close" onclick="removeCart('${p.id}')">✕</button>
 
-  </div>`;
+  </div>
+
+  <div class="qty">
+  <button onclick="changeQty('${p.id}',-1)">−</button>
+  <b>${i.qty}</b>
+  <button onclick="changeQty('${p.id}',1)">+</button>
+  </div>
+
+  </div>
+  `;
+
  }).join("");
 }
-
 
 function openCart(){
  renderCart();
@@ -1115,7 +925,6 @@ function closeCart(){
 function outsideCart(e){
  if(e.target.id==="cartBg")closeCart();
 }
-
 
 function orderCart(){
 
@@ -1145,46 +954,45 @@ Tên khách:
 Số điện thoại:
 Địa chỉ:`;
 
- navigator.clipboard?.writeText(message).catch(()=>{});
+ if(navigator.clipboard){
+  navigator.clipboard.writeText(message).catch(()=>{});
+ }
 
- alert(
- "Đơn hàng đã được tạo.\n\n"+
- "Nội dung đơn hàng đã được sao chép.\n"+
- "Bấm OK để mở Zalo."
- );
+ alert("Đơn hàng đã được tạo.\nNội dung đã được sao chép nếu trình duyệt cho phép.");
 
  window.open("https://zalo.me/0786833253","_blank");
 }
 
 
-/* ================================
-   REPAIR
-================================ */
+/* =====================================================
+   REPAIRS UI
+===================================================== */
 
 function renderRepairs(){
 
  const q=(document.getElementById("repairSearch").value||"").toLowerCase();
 
  const list=repairs.filter(r=>
-  r.join(" ").toLowerCase().includes(q)
+  `${r.model} ${r.service} ${r.price}`.toLowerCase().includes(q)
  );
 
  document.getElementById("repairTable").innerHTML=
- list.map((r,i)=>`
+ list.map(r=>`
  <tr>
-  <td><b>${escapeHtml(r[0])}</b></td>
-  <td>${escapeHtml(r[1])}</td>
-  <td class="price">${escapeHtml(r[2])}</td>
+ <td><b>${esc(r.model)}</b></td>
+ <td>${esc(r.service)}</td>
+ <td class="price">${esc(r.price)}</td>
  </tr>
  `).join("");
+
 }
 
 
-/* ================================
+/* =====================================================
    BOOKING
-================================ */
+===================================================== */
 
-function submitBooking(){
+async function submitBooking(){
 
  const name=document.getElementById("bName").value.trim();
  const phone=document.getElementById("bPhone").value.trim();
@@ -1196,22 +1004,31 @@ function submitBooking(){
  const note=document.getElementById("bNote").value.trim();
 
  if(!name||!phone||!date||!problem){
+
   alert("Vui lòng nhập Họ tên, Số điện thoại, Ngày và lỗi cần sửa.");
   return;
+
  }
 
  const booking={
-  id:Date.now(),
-  name,phone,brand,model,date,time,problem,note,
+  name,
+  phone,
+  brand,
+  model,
+  date,
+  time,
+  problem,
+  note,
   status:"Chờ xác nhận",
-  created:new Date().toLocaleString("vi-VN")
+  createdAt:Date.now()
  };
 
- bookings.push(booking);
- saveAll();
+ try{
 
- const message=
- `PD TECHCARE - ĐẶT LỊCH
+  await addDoc(collection(db,"bookings"),booking);
+
+  const message=
+  `PD TECHCARE - ĐẶT LỊCH
 
 👤 Khách: ${name}
 📞 SĐT: ${phone}
@@ -1219,47 +1036,39 @@ function submitBooking(){
 📅 Ngày: ${date}
 ⏰ Giờ: ${time||"Chưa chọn"}
 
-🔧 Dịch vụ/lỗi:
+🔧 Lỗi / dịch vụ:
 ${problem}
 
 📝 Ghi chú:
 ${note||"Không có"}`;
 
- navigator.clipboard?.writeText(message).catch(()=>{});
+  if(navigator.clipboard){
+   navigator.clipboard.writeText(message).catch(()=>{});
+  }
 
- alert(
- "✅ Đặt lịch thành công!\n\n"+
- "Thông tin đã được lưu trên thiết bị.\n"+
- "Nội dung cũng đã được sao chép.\n\n"+
- "Bấm OK để mở Zalo gửi cho cửa hàng."
- );
+  alert("✅ Đặt lịch thành công!\n\nThông tin đã được lưu vào hệ thống.");
 
- window.open("https://zalo.me/0786833253","_blank");
+  window.open("https://zalo.me/0786833253","_blank");
 
- document.getElementById("bName").value="";
- document.getElementById("bPhone").value="";
- document.getElementById("bModel").value="";
- document.getElementById("bProblem").value="";
- document.getElementById("bNote").value="";
+  document.getElementById("bName").value="";
+  document.getElementById("bPhone").value="";
+  document.getElementById("bModel").value="";
+  document.getElementById("bProblem").value="";
+  document.getElementById("bNote").value="";
+
+ }catch(error){
+
+  console.error(error);
+  alert("❌ Không thể gửi lịch.\n\n"+error.message);
+
+ }
 
 }
 
 
-/* ================================
+/* =====================================================
    ADMIN LOGIN
-================================ */
-
-/*
-  MẬT KHẨU DEMO:
-  tài khoản: admin
-  mật khẩu: 123456
-
-  ĐỔI MẬT KHẨU Ở HÀNG BÊN DƯỚI.
-*/
-
-const ADMIN_USER="admin";
-const ADMIN_PASS="123456";
-
+===================================================== */
 
 function openAdminLogin(){
  document.getElementById("loginBg").classList.add("show");
@@ -1269,39 +1078,69 @@ function closeAdminLogin(){
  document.getElementById("loginBg").classList.remove("show");
 }
 
+async function adminLogin(){
 
-function adminLogin(){
+ const email=document.getElementById("adminEmail").value.trim();
+ const password=document.getElementById("adminPassword").value;
 
- const u=document.getElementById("adminUser").value;
- const p=document.getElementById("adminPass").value;
+ if(!email||!password){
+  alert("Nhập email và mật khẩu Admin.");
+  return;
+ }
 
- if(u===ADMIN_USER && p===ADMIN_PASS){
+ try{
 
-  adminLogged=true;
-  closeAdminLogin();
+  await signInWithEmailAndPassword(auth,email,password);
 
-  document.getElementById("adminBg").classList.add("show");
+ }catch(error){
 
-  renderAdminProducts();
-  renderAdminRepairs();
-  renderAdminBookings();
+  console.error(error);
 
-  toast("Đăng nhập Admin thành công");
-
- }else{
-
-  alert("Sai tài khoản hoặc mật khẩu.");
+  alert("Đăng nhập thất bại.\n\n"+error.message);
 
  }
 
 }
 
+onAuthStateChanged(auth,async(user)=>{
 
-function logoutAdmin(){
+ if(user && user.uid===ADMIN_UID){
+
+  adminLogged=true;
+
+  closeAdminLogin();
+
+  document.getElementById("adminBg").classList.add("show");
+
+  await loadBookings();
+  renderAdminProducts();
+  renderAdminRepairs();
+
+ }else{
+
+  adminLogged=false;
+
+ }
+
+});
+
+
+async function logoutAdmin(){
+
+ try{
+  await signOut(auth);
+ }catch(e){
+  console.error(e);
+ }
+
  adminLogged=false;
  document.getElementById("adminBg").classList.remove("show");
 }
 
+
+/* =====================================================
+   ADMIN TABS
+===================================================== */
 
 function adminTab(id){
 
@@ -1313,11 +1152,70 @@ function adminTab(id){
 }
 
 
-/* ================================
+/* =====================================================
    ADMIN PRODUCTS
-================================ */
+===================================================== */
 
-function addProductAdmin(){
+function renderAdminProducts(){
+
+ document.getElementById("adminProducts").innerHTML=
+ products.map(p=>`
+
+ <div class="admin-card">
+
+ <div class="admin-row">
+
+ <div>
+ <label>Tên</label>
+ <input id="pn_${p.id}" value="${esc(p.name)}">
+ </div>
+
+ <div>
+ <label>Giá</label>
+ <input id="pp_${p.id}" type="number" value="${Number(p.price||0)}">
+ </div>
+
+ <div>
+ <label>Danh mục</label>
+ <input id="pc_${p.id}" value="${esc(p.category)}">
+ </div>
+
+ <div>
+ <label>Emoji</label>
+ <input id="pi_${p.id}" value="${esc(p.icon||"📱")}">
+ </div>
+
+ <div style="grid-column:1/-1">
+ <label>Link hình ảnh</label>
+ <input id="pimg_${p.id}" value="${esc(p.image||"")}">
+ </div>
+
+ <div style="grid-column:1/-1">
+ <label>Mô tả</label>
+ <textarea id="pd_${p.id}">${esc(p.desc||"")}</textarea>
+ </div>
+
+ </div>
+
+ <div class="admin-actions">
+
+ <button class="btn primary" onclick="saveProduct('${p.id}')">
+ 💾 Lưu
+ </button>
+
+ <button class="btn light" onclick="deleteProduct('${p.id}')">
+ 🗑️ Xóa
+ </button>
+
+ </div>
+
+ </div>
+
+ `).join("");
+}
+
+
+async function addProductAdmin(){
 
  const name=document.getElementById("newName").value.trim();
  const price=Number(document.getElementById("newPrice").value);
@@ -1331,80 +1229,138 @@ function addProductAdmin(){
   return;
  }
 
- products.push({
-  id:Date.now(),
-  name,
-  price,
-  category,
-  icon,
-  image,
-  desc
- });
+ try{
 
- saveAll();
- renderProducts();
- renderAdminProducts();
+  const data={
+   name,
+   price,
+   category,
+   icon,
+   image,
+   desc,
+   createdAt:Date.now()
+  };
 
- document.getElementById("newName").value="";
- document.getElementById("newPrice").value="";
- document.getElementById("newImage").value="";
- document.getElementById("newDesc").value="";
+  const ref=await addDoc(collection(db,"products"),data);
 
- toast("Đã thêm sản phẩm");
+  products.push({
+   id:ref.id,
+   ...data
+  });
+
+  renderProducts();
+  renderAdminProducts();
+
+  document.getElementById("newName").value="";
+  document.getElementById("newPrice").value="";
+  document.getElementById("newImage").value="";
+  document.getElementById("newDesc").value="";
+
+  toast("✅ Đã thêm sản phẩm");
+
+ }catch(error){
+
+  alert("Không thêm được sản phẩm.\n\n"+error.message);
+
+ }
 }
 
 
-function renderAdminProducts(){
+async function saveProduct(id){
 
- const box=document.getElementById("adminProducts");
+ const p=products.find(x=>x.id===id);
 
- box.innerHTML=products.map(p=>`
+ if(!p)return;
+
+ const data={
+  name:document.getElementById("pn_"+id).value,
+  price:Number(document.getElementById("pp_"+id).value)||0,
+  category:document.getElementById("pc_"+id).value,
+  icon:document.getElementById("pi_"+id).value||"📱",
+  image:document.getElementById("pimg_"+id).value,
+  desc:document.getElementById("pd_"+id).value
+ };
+
+ try{
+
+  await setDoc(doc(db,"products",id),data,{merge:true});
+
+  Object.assign(p,data);
+
+  renderProducts();
+
+  toast("💾 Đã cập nhật sản phẩm");
+
+ }catch(error){
+
+  alert("Không lưu được.\n\n"+error.message);
+
+ }
+}
+
+
+async function deleteProduct(id){
+
+ if(!confirm("Bạn chắc chắn muốn xóa sản phẩm này?"))return;
+
+ try{
+
+  await deleteDoc(doc(db,"products",id));
+
+  products=products.filter(x=>x.id!==id);
+
+  renderProducts();
+  renderAdminProducts();
+
+  toast("Đã xóa sản phẩm");
+
+ }catch(error){
+
+  alert("Không xóa được.\n\n"+error.message);
+
+ }
+}
+
+
+/* =====================================================
+   ADMIN REPAIRS
+===================================================== */
+
+function renderAdminRepairs(){
+
+ document.getElementById("adminRepairs").innerHTML=
+ repairs.map(r=>`
 
  <div class="admin-card">
 
  <div class="admin-row">
 
-  <div>
-   <label>Tên</label>
-   <input id="pn_${p.id}" value="${escapeAttr(p.name)}">
-  </div>
+ <div>
+ <label>Model / hãng</label>
+ <input id="rm_${r.id}" value="${esc(r.model)}">
+ </div>
 
-  <div>
-   <label>Giá</label>
-   <input id="pp_${p.id}" type="number" value="${Number(p.price)}">
-  </div>
+ <div>
+ <label>Dịch vụ</label>
+ <input id="rs_${r.id}" value="${esc(r.service)}">
+ </div>
 
-  <div>
-   <label>Danh mục</label>
-   <input id="pc_${p.id}" value="${escapeAttr(p.category)}">
-  </div>
-
-  <div>
-   <label>Emoji</label>
-   <input id="pi_${p.id}" value="${escapeAttr(p.icon||"📱")}">
-  </div>
-
-  <div style="grid-column:1/-1">
-   <label>Link hình ảnh</label>
-   <input id="pimg_${p.id}" value="${escapeAttr(p.image||"")}">
-  </div>
-
-  <div style="grid-column:1/-1">
-   <label>Mô tả</label>
-   <textarea id="pd_${p.id}">${escapeHtml(p.desc||"")}</textarea>
-  </div>
+ <div>
+ <label>Giá</label>
+ <input id="rp_${r.id}" value="${esc(r.price)}">
+ </div>
 
  </div>
 
  <div class="admin-actions">
 
-  <button class="btn primary" onclick="saveProduct(${p.id})">
-   💾 Lưu
-  </button>
+ <button class="btn primary" onclick="saveRepair('${r.id}')">
+ 💾 Lưu
+ </button>
 
-  <button class="btn light" onclick="deleteProduct(${p.id})">
-   🗑️ Xóa
-  </button>
+ <button class="btn light" onclick="deleteRepair('${r.id}')">
+ 🗑️ Xóa
+ </button>
 
  </div>
 
@@ -1414,44 +1370,7 @@ function renderAdminProducts(){
 }
 
 
-function saveProduct(id){
-
- const p=products.find(x=>x.id===id);
- if(!p)return;
-
- p.name=document.getElementById("pn_"+id).value;
- p.price=Number(document.getElementById("pp_"+id).value)||0;
- p.category=document.getElementById("pc_"+id).value;
- p.icon=document.getElementById("pi_"+id).value||"📱";
- p.image=document.getElementById("pimg_"+id).value;
- p.desc=document.getElementById("pd_"+id).value;
-
- saveAll();
- renderProducts();
-
- toast("💾 Đã cập nhật sản phẩm");
-}
-
-
-function deleteProduct(id){
-
- if(!confirm("Bạn chắc chắn muốn xóa sản phẩm này?"))return;
-
- products=products.filter(x=>x.id!==id);
-
- saveAll();
- renderProducts();
- renderAdminProducts();
-
- toast("Đã xóa sản phẩm");
-}
-
-
-/* ================================
-   ADMIN REPAIR
-================================ */
-
-function addRepairAdmin(){
+async function addRepairAdmin(){
 
  const model=document.getElementById("newRepairModel").value.trim();
  const service=document.getElementById("newRepairService").value.trim();
@@ -1462,169 +1381,155 @@ function addRepairAdmin(){
   return;
  }
 
- repairs.push([model,service,price]);
+ try{
 
- saveAll();
- renderRepairs();
- renderAdminRepairs();
+  const data={
+   model,
+   service,
+   price,
+   createdAt:Date.now()
+  };
 
- document.getElementById("newRepairModel").value="";
- document.getElementById("newRepairService").value="";
- document.getElementById("newRepairPrice").value="";
+  const ref=await addDoc(collection(db,"repairs"),data);
 
- toast("Đã thêm dịch vụ");
+  repairs.push({
+   id:ref.id,
+   ...data
+  });
+
+  renderRepairs();
+  renderAdminRepairs();
+
+  document.getElementById("newRepairModel").value="";
+  document.getElementById("newRepairService").value="";
+  document.getElementById("newRepairPrice").value="";
+
+  toast("✅ Đã thêm dịch vụ");
+
+ }catch(error){
+
+  alert("Không thêm được dịch vụ.\n\n"+error.message);
+
+ }
 }
 
 
-function renderAdminRepairs(){
+async function saveRepair(id){
 
- const box=document.getElementById("adminRepairs");
+ const r=repairs.find(x=>x.id===id);
 
- box.innerHTML=repairs.map((r,i)=>`
+ if(!r)return;
 
- <div class="admin-card">
+ const data={
+  model:document.getElementById("rm_"+id).value,
+  service:document.getElementById("rs_"+id).value,
+  price:document.getElementById("rp_"+id).value
+ };
 
- <div class="admin-row">
+ try{
 
-  <div>
-   <label>Model / hãng</label>
-   <input id="rm_${i}" value="${escapeAttr(r[0])}">
-  </div>
+  await setDoc(doc(db,"repairs",id),data,{merge:true});
 
-  <div>
-   <label>Dịch vụ</label>
-   <input id="rs_${i}" value="${escapeAttr(r[1])}">
-  </div>
+  Object.assign(r,data);
 
-  <div>
-   <label>Giá</label>
-   <input id="rp_${i}" value="${escapeAttr(r[2])}">
-  </div>
+  renderRepairs();
 
- </div>
+  toast("💾 Đã cập nhật giá sửa");
 
- <div class="admin-actions">
+ }catch(error){
 
-  <button class="btn primary" onclick="saveRepair(${i})">
-   💾 Lưu
-  </button>
+  alert("Không lưu được.\n\n"+error.message);
 
-  <button class="btn light" onclick="deleteRepair(${i})">
-   🗑️ Xóa
-  </button>
-
- </div>
-
- </div>
-
- `).join("");
+ }
 }
 
 
-function saveRepair(i){
-
- repairs[i][0]=document.getElementById("rm_"+i).value;
- repairs[i][1]=document.getElementById("rs_"+i).value;
- repairs[i][2]=document.getElementById("rp_"+i).value;
-
- saveAll();
- renderRepairs();
-
- toast("💾 Đã cập nhật giá sửa");
-}
-
-
-function deleteRepair(i){
+async function deleteRepair(id){
 
  if(!confirm("Xóa dịch vụ sửa chữa này?"))return;
 
- repairs.splice(i,1);
+ try{
 
- saveAll();
- renderRepairs();
- renderAdminRepairs();
+  await deleteDoc(doc(db,"repairs",id));
 
- toast("Đã xóa dịch vụ");
+  repairs=repairs.filter(x=>x.id!==id);
+
+  renderRepairs();
+  renderAdminRepairs();
+
+  toast("Đã xóa dịch vụ");
+
+ }catch(error){
+
+  alert("Không xóa được.\n\n"+error.message);
+
+ }
 }
 
 
-/* ================================
+/* =====================================================
    ADMIN BOOKINGS
-================================ */
+===================================================== */
 
 function renderAdminBookings(){
 
  const box=document.getElementById("adminBookings");
 
  if(!bookings.length){
+
   box.innerHTML='<div class="empty">Chưa có lịch hẹn.</div>';
+
   return;
  }
 
- box.innerHTML=[...bookings].reverse().map(b=>`
+ box.innerHTML=bookings.map(b=>`
 
  <div class="admin-card">
 
- <h3>${escapeHtml(b.name)}</h3>
+ <h3>${esc(b.name)}</h3>
 
- <p style="margin-top:7px">
- 📞 ${escapeHtml(b.phone)}<br>
- 📱 ${escapeHtml(b.brand+" "+b.model)}<br>
- 📅 ${escapeHtml(b.date)} ${escapeHtml(b.time||"")}<br>
- 🔧 ${escapeHtml(b.problem)}
+ <p style="margin-top:7px;line-height:1.8">
+ 📞 ${esc(b.phone)}<br>
+ 📱 ${esc((b.brand||"")+" "+(b.model||""))}<br>
+ 📅 ${esc(b.date||"")} ${esc(b.time||"")}<br>
+ 🔧 ${esc(b.problem||"")}<br>
+ ${b.note?`📝 ${esc(b.note)}<br>`:""}
  </p>
-
- ${b.note
- ? `<p style="margin-top:6px">📝 ${escapeHtml(b.note)}</p>`
- : ""}
 
  <div class="admin-row" style="margin-top:10px">
 
-  <div>
-   <label>Trạng thái</label>
+ <div>
 
-   <select id="bs_${b.id}">
+ <label>Trạng thái</label>
 
-    <option ${b.status==="Chờ xác nhận"?"selected":""}>
-     Chờ xác nhận
-    </option>
+ <select id="bs_${b.id}">
 
-    <option ${b.status==="Đã xác nhận"?"selected":""}>
-     Đã xác nhận
-    </option>
+ <option value="Chờ xác nhận" ${b.status==="Chờ xác nhận"?"selected":""}>Chờ xác nhận</option>
+ <option value="Đã xác nhận" ${b.status==="Đã xác nhận"?"selected":""}>Đã xác nhận</option>
+ <option value="Đang sửa" ${b.status==="Đang sửa"?"selected":""}>Đang sửa</option>
+ <option value="Hoàn thành" ${b.status==="Hoàn thành"?"selected":""}>Hoàn thành</option>
+ <option value="Đã trả máy" ${b.status==="Đã trả máy"?"selected":""}>Đã trả máy</option>
 
-    <option ${b.status==="Đang sửa"?"selected":""}>
-     Đang sửa
-    </option>
+ </select>
 
-    <option ${b.status==="Hoàn thành"?"selected":""}>
-     Hoàn thành
-    </option>
+ </div>
 
-    <option ${b.status==="Đã trả máy"?"selected":""}>
-     Đã trả máy
-    </option>
-
-   </select>
-
-  </div>
-
-  <div>
-   <label>Thời gian đặt</label>
-   <input value="${escapeAttr(b.created||"")}" disabled>
-  </div>
+ <div>
+ <label>Ngày đặt</label>
+ <input value="${esc(new Date(Number(b.createdAt||Date.now())).toLocaleString("vi-VN"))}" disabled>
+ </div>
 
  </div>
 
  <div class="admin-actions">
 
-  <button class="btn primary" onclick="saveBookingStatus(${b.id})">
-   💾 Lưu trạng thái
-  </button>
+ <button class="btn primary" onclick="saveBookingStatus('${b.id}')">
+ 💾 Lưu trạng thái
+ </button>
 
-  <button class="btn light" onclick="deleteBooking(${b.id})">
-   🗑️ Xóa
-  </button>
+ <button class="btn light" onclick="deleteBooking('${b.id}')">
+ 🗑️ Xóa
+ </button>
 
  </div>
 
@@ -1634,56 +1539,59 @@ function renderAdminBookings(){
 }
 
 
-function saveBookingStatus(id){
+async function saveBookingStatus(id){
 
  const b=bookings.find(x=>x.id===id);
+
  if(!b)return;
 
- b.status=document.getElementById("bs_"+id).value;
+ const status=document.getElementById("bs_"+id).value;
 
- saveAll();
- renderAdminBookings();
+ try{
 
- toast("Đã cập nhật trạng thái");
+  await setDoc(
+   doc(db,"bookings",id),
+   {status},
+   {merge:true}
+  );
+
+  b.status=status;
+
+  toast("✅ Đã cập nhật trạng thái");
+
+ }catch(error){
+
+  alert("Không cập nhật được.\n\n"+error.message);
+
+ }
 }
 
 
-function deleteBooking(id){
+async function deleteBooking(id){
 
  if(!confirm("Xóa lịch hẹn này?"))return;
 
- bookings=bookings.filter(x=>x.id!==id);
+ try{
 
- saveAll();
- renderAdminBookings();
+  await deleteDoc(doc(db,"bookings",id));
 
- toast("Đã xóa lịch hẹn");
+  bookings=bookings.filter(x=>x.id!==id);
+
+  renderAdminBookings();
+
+  toast("Đã xóa lịch hẹn");
+
+ }catch(error){
+
+  alert("Không xóa được.\n\n"+error.message);
+
+ }
 }
 
 
-/* ================================
-   AN TOÀN HIỂN THỊ HTML
-================================ */
-
-function escapeHtml(value){
-
- return String(value??"")
- .replace(/&/g,"&amp;")
- .replace(/</g,"&lt;")
- .replace(/>/g,"&gt;")
- .replace(/"/g,"&quot;")
- .replace(/'/g,"&#039;");
-
-}
-
-function escapeAttr(value){
- return escapeHtml(value);
-}
-
-
-/* ================================
-   START
-================================ */
+/* =====================================================
+   KHỞI ĐỘNG
+===================================================== */
 
 document.getElementById("bDate").min=
 new Date().toISOString().slice(0,10);
@@ -1691,8 +1599,11 @@ new Date().toISOString().slice(0,10);
 document.getElementById("bDate").value=
 new Date().toISOString().slice(0,10);
 
-renderProducts();
-renderRepairs();
+await Promise.all([
+ loadProducts(),
+ loadRepairs()
+]);
+
 renderCart();
 
 </script>
